@@ -1,0 +1,29 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="movie_poster_width">35dp</dimen>
+    <dimen name="movie_poster_height">35dp</dimen>
+    <dimen name="movie_poster_title_height">130dp</dimen>
+    <dimen name="movie_poster_title_text_size">30sp</dimen>
+    <dimen name="movie_poster_title_margin_left">25dp</dimen>
+    <dimen name="movie_poster_detail_layout_height">250dp</dimen>
+    <dimen name="movie_poster_detail_width">135dp</dimen>
+    <dimen name="movie_poster_detai_height">195dp</dimen>
+    <dimen name="movie_poster_detail_layout_margin">15dp</dimen>
+    <dimen name="movie_poster_detail_fields_margin_left">35dp</dimen>
+    <dimen name="movie_poster_detail_fields_margin_top">5dp</dimen>
+
+    <dimen name="movie_poster_detail_fav_btn_margin_top">25dp</dimen>
+    <dimen name="trailer_num_textview_mrgin_left">45dp</dimen>
+    <dimen name="trailer_title_size">25dp</dimen>
+    <dimen name="trailer_num_size">20dp</dimen>
+    <dimen name="trailer_play_icon_margin_top">35dp</dimen>
+    <dimen name="trailer_num_margin_left">10dp</dimen>
+    <dimen name="hour_min_view_text_size">20sp</dimen>
+
+    <dimen name="year_view_text_size">25sp</dimen>
+    <dimen name="num_view_text_size">15sp</dimen>
+    <dimen name="mark_as_btn_width">105dp</dimen>
+    <dimen name="movie_desc_view_text_size">20sp</dimen>
+</resources>

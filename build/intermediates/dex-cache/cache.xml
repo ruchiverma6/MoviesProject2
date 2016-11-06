@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/ruchi/Desktop/UdacityProjects/Project1/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="665d21a8a069c96b4d9e8b434f5096d865b4e261">
+        <dex dex="/home/ruchi/Desktop/UdacityProjects/Project1/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0-d37d87362a43fbca4e9be391231a203c5f2e9847.jar" />
+    </item>
+    <item
+        jar="/home/ruchi/Desktop/UdacityProjects/Project1/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="53a420cd4f49274db6bd43475f8006ba67ef6bbd">
+        <dex dex="/home/ruchi/Desktop/UdacityProjects/Project1/app/build/intermediates/pre-dexed/debug/classes-dfde19149b751ff1cf2ff92f3148717b24b02b42.jar" />
+    </item>
+    <item
+        jar="/home/ruchi/Desktop/UdacityProjects/Project1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="8bc45ce1f63d1a391fd38b32a201be5a42f9c95d">
+        <dex dex="/home/ruchi/Desktop/UdacityProjects/Project1/app/build/intermediates/pre-dexed/debug/classes-56bf2413bfc0ff7f9e768440ed6b95860e4ecb69.jar" />
+    </item>
+    <item
+        jar="/home/ruchi/Desktop/UdacityProjects/Project1/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="d29714cc76b38157e3cbd034c66e1ec808eb4c19">
+        <dex dex="/home/ruchi/Desktop/UdacityProjects/Project1/app/build/intermediates/pre-dexed/debug/classes-4dbbb25ea4da8a8e95f9a11ae95629d006972470.jar" />
+    </item>
+    <item
+        jar="/home/ruchi/Desktop/UdacityProjects/Project1/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="76fb65a4b41ea42dab8a1310ed772a2420c96b52">
+        <dex dex="/home/ruchi/Desktop/UdacityProjects/Project1/app/build/intermediates/pre-dexed/debug/classes-f407d4a43ddded55a68c277ec7f7223d23514a9b.jar" />
+    </item>
+    <item
+        jar="/home/ruchi/Desktop/UdacityProjects/Project1/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="26674000177e45447a0326a6ad84612761199a13">
+        <dex dex="/home/ruchi/Desktop/UdacityProjects/Project1/app/build/intermediates/pre-dexed/debug/classes-91359a5b6c339426de4b2e6796025f9dabe4c4c8.jar" />
+    </item>
+    <item
+        jar="/home/ruchi/Desktop/UdacityProjects/Project1/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="/home/ruchi/Desktop/UdacityProjects/Project1/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0-51c8b209f26ed727ad85bd4a56a9e137c60a1124.jar" />
+    </item>
+    <item
+        jar="/home/ruchi/Desktop/UdacityProjects/Project1/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="ee5faf4dee5b6a4364bf51587871047dde7c703a">
+        <dex dex="/home/ruchi/Desktop/UdacityProjects/Project1/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0-cc60843c60de5fa7d9424a09af55c4831af1c7ff.jar" />
+    </item>
+    <item
+        jar="/home/ruchi/Desktop/UdacityProjects/Project1/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="75b1f366ff0bbc78f8b1f7cf0dc82e7c53afef6a">
+        <dex dex="/home/ruchi/Desktop/UdacityProjects/Project1/app/build/intermediates/pre-dexed/debug/classes-2a1096d900e2abaf8c47e1cd63dfecf95cf5ae92.jar" />
+    </item>
+    <item
+        jar="/home/ruchi/Desktop/UdacityProjects/Project1/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/home/ruchi/Desktop/UdacityProjects/Project1/app/build/intermediates/pre-dexed/debug/classes-e45398b75259799c96542348683c206ea033e548.jar" />
+    </item>
+    <item
+        jar="/home/ruchi/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="/home/ruchi/Desktop/UdacityProjects/Project1/app/build/intermediates/pre-dexed/debug/picasso-2.5.2-75b181062ecd8e106782383210b1cf9084a26d4b.jar" />
+    </item>
+    <item
+        jar="/home/ruchi/Desktop/UdacityProjects/Project1/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="4ccbcda5c72027c7f7c14be9ff8640d9cb0d8da0">
+        <dex dex="/home/ruchi/Desktop/UdacityProjects/Project1/app/build/intermediates/pre-dexed/debug/classes-e24c1c125c95a70798c89e16b2554f5c3c0febbe.jar" />
+    </item>
+    <item
+        jar="/home/ruchi/Desktop/UdacityProjects/Project1/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="3b61a70884adaf0be3fc06c70c801e3e6df13133">
+        <dex dex="/home/ruchi/Desktop/UdacityProjects/Project1/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0-c3d360d23ac99aa883552225a51ed5b059abb110.jar" />
+    </item>
+    <item
+        jar="/home/ruchi/WorkingTools/android-sdk-linux/extras/android/m2repository/com/android/support/support-annotations/25.0.0/support-annotations-25.0.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="a22d2cc94da87b254451fa8ed28afc30b4653773">
+        <dex dex="/home/ruchi/Desktop/UdacityProjects/Project1/app/build/intermediates/pre-dexed/debug/support-annotations-25.0.0-42101ed75799f7074db5a427079faec8b0e788c9.jar" />
+    </item>
+    <item
+        jar="/home/ruchi/Desktop/UdacityProjects/Project1/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="07daa0b6e1d455c82a38422ffe287c18823d339a">
+        <dex dex="/home/ruchi/Desktop/UdacityProjects/Project1/app/build/intermediates/pre-dexed/debug/classes-f877be3f1296e17492ff0736400f35f5c3d8a661.jar" />
+    </item>
+    <item
+        jar="/home/ruchi/Desktop/UdacityProjects/Project1/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="f2e3b9bc1ec25f652e8007ce7774c991e38f6a00">
+        <dex dex="/home/ruchi/Desktop/UdacityProjects/Project1/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0-711fb8ba491ad13a6fa0395f2266f7de507dcf51.jar" />
+    </item>
+
+</items>

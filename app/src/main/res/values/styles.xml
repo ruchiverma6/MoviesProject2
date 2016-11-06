@@ -1,0 +1,54 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+<style name="movie_poster_title_style">
+    <item name="android:textColor">@android:color/white</item>
+    <item name="android:background">@color/green_color</item>
+    <item name="android:textStyle">bold</item>
+    <item name="android:textSize">@dimen/movie_poster_title_text_size</item>
+</style>
+    
+    <style name="trailers_title_view_style">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@android:color/darker_gray</item>
+        <item name="android:textSize">@dimen/trailer_title_size</item>
+    </style>
+
+    <style name="trailers_num_view_style">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@android:color/darker_gray</item>
+        <item name="android:textSize">@dimen/trailer_num_size</item>
+    </style>
+
+    <style name="year_view_style">
+
+        <item name="android:textColor">@color/dark_gray</item>
+        <item name="android:textSize">@dimen/year_view_text_size</item>
+    </style>
+
+    <style name="hour_min_view_style">
+        <item name="android:textStyle">italic</item>
+        <item name="android:textColor">@color/dark_gray</item>
+        <item name="android:textSize">@dimen/hour_min_view_text_size</item>
+    </style>
+    <style name="num_view_style">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/dark_gray</item>
+        <item name="android:textSize">@dimen/num_view_text_size</item>
+    </style>
+
+    <style name="movie_desc_style">
+
+        <item name="android:textColor">@color/light_gray</item>
+        <item name="android:textSize">@dimen/movie_desc_view_text_size</item>
+    </style>
+
+    <style name="mark_as_fav_btn_style">
+        <item name="android:textColor">@color/dark_gray</item>
+        <item name="android:background">@color/sky_green_color</item>
+
+    </style>
+</resources>

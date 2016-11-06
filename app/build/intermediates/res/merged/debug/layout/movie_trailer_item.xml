@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/trailer_tetview_title"
+        style="@style/trailers_title_view_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Trailers:" />
+
+    <ImageView
+        android:id="@+id/trailer_play_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/trailer_tetview_title"
+        android:layout_marginTop="@dimen/trailer_play_icon_margin_top"
+        android:src="@drawable/studio" />
+
+    <TextView
+        android:id="@+id/trailer_num"
+        style="@style/trailers_num_view_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/trailer_play_icon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="52dp"
+        android:layout_marginLeft="@dimen/trailer_num_margin_left"
+        android:gravity="center_vertical"
+        android:text="Trailer 1" />
+</RelativeLayout><!-- From: file:/home/ruchi/Desktop/UdacityProjects/Project1/app/src/main/res/layout/movie_trailer_item.xml -->

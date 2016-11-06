@@ -27,8 +27,7 @@ public class MovieDetailActivity extends AppCompatActivity implements DataUpdate
     //ListView object to hold movie trailers
     private ListView mMovieTrailerListView;
 
-    //TrailersAdapter object to bind data to TrailersListView
-    private TrailersAdapter mTrailersAdapter;
+
 
     //TextView object to hold movie poster title.
     private TextView mMoviePosterTitleTextView;

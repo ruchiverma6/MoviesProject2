@@ -3,7 +3,7 @@
     android:layout_height="match_parent"
 android:orientation="vertical"
     android:weightSum="1"
-    tools:context="project1.android.com.movies.YouTubePlayerActivity">
+    tools:context="project1.android.com.project1.YouTubePlayerActivity">
 
     <com.google.android.youtube.player.YouTubePlayerView
         android:id="@+id/youtube_view"

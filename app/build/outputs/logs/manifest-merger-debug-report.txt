@@ -85,7 +85,7 @@ MERGED from [com.android.support:support-compat:25.0.0] C:\Users\v-ruchd\Desktop
 		ADDED from C:\Users\v-ruchd\Desktop\la3011\Project1_3011\Project1\app\src\main\AndroidManifest.xml:16:9-43
 	android:theme
 		ADDED from C:\Users\v-ruchd\Desktop\la3011\Project1_3011\Project1\app\src\main\AndroidManifest.xml:18:9-65
-activity#project1.android.com.project2.MainActivity
+activity#project1.android.com.project1.MainActivity
 ADDED from C:\Users\v-ruchd\Desktop\la3011\Project1_3011\Project1\app\src\main\AndroidManifest.xml:19:9-27:20
 	android:label
 		ADDED from C:\Users\v-ruchd\Desktop\la3011\Project1_3011\Project1\app\src\main\AndroidManifest.xml:21:13-45
@@ -101,13 +101,13 @@ category#android.intent.category.LAUNCHER
 ADDED from C:\Users\v-ruchd\Desktop\la3011\Project1_3011\Project1\app\src\main\AndroidManifest.xml:25:17-77
 	android:name
 		ADDED from C:\Users\v-ruchd\Desktop\la3011\Project1_3011\Project1\app\src\main\AndroidManifest.xml:25:27-74
-activity#project1.android.com.project2.MovieDetailActivity
+activity#project1.android.com.project1.MovieDetailActivity
 ADDED from C:\Users\v-ruchd\Desktop\la3011\Project1_3011\Project1\app\src\main\AndroidManifest.xml:28:9-31:20
 	android:label
 		ADDED from C:\Users\v-ruchd\Desktop\la3011\Project1_3011\Project1\app\src\main\AndroidManifest.xml:30:13-64
 	android:name
 		ADDED from C:\Users\v-ruchd\Desktop\la3011\Project1_3011\Project1\app\src\main\AndroidManifest.xml:29:13-77
-activity#project1.android.com.project2.SettingsActivity
+activity#project1.android.com.project1.SettingsActivity
 ADDED from C:\Users\v-ruchd\Desktop\la3011\Project1_3011\Project1\app\src\main\AndroidManifest.xml:32:9-39:20
 	android:label
 		ADDED from C:\Users\v-ruchd\Desktop\la3011\Project1_3011\Project1\app\src\main\AndroidManifest.xml:34:13-60
@@ -121,19 +121,19 @@ ADDED from C:\Users\v-ruchd\Desktop\la3011\Project1_3011\Project1\app\src\main\A
 		ADDED from C:\Users\v-ruchd\Desktop\la3011\Project1_3011\Project1\app\src\main\AndroidManifest.xml:38:17-75
 	android:name
 		ADDED from C:\Users\v-ruchd\Desktop\la3011\Project1_3011\Project1\app\src\main\AndroidManifest.xml:37:17-63
-provider#project1.android.com.project2.data.MovieProvider
+provider#project1.android.com.project1.data.MovieProvider
 ADDED from C:\Users\v-ruchd\Desktop\la3011\Project1_3011\Project1\app\src\main\AndroidManifest.xml:41:9-43:67
 	android:authorities
 		ADDED from C:\Users\v-ruchd\Desktop\la3011\Project1_3011\Project1\app\src\main\AndroidManifest.xml:43:13-64
 	android:name
 		ADDED from C:\Users\v-ruchd\Desktop\la3011\Project1_3011\Project1\app\src\main\AndroidManifest.xml:42:13-76
-activity#project1.android.com.project2.YouTubePlayerActivity
+activity#project1.android.com.project1.YouTubePlayerActivity
 ADDED from C:\Users\v-ruchd\Desktop\la3011\Project1_3011\Project1\app\src\main\AndroidManifest.xml:45:9-48:20
 	android:label
 		ADDED from C:\Users\v-ruchd\Desktop\la3011\Project1_3011\Project1\app\src\main\AndroidManifest.xml:47:13-67
 	android:name
 		ADDED from C:\Users\v-ruchd\Desktop\la3011\Project1_3011\Project1\app\src\main\AndroidManifest.xml:46:13-79
-service#project1.android.com.project2.sync.MovieSyncService
+service#project1.android.com.project1.sync.MovieSyncService
 ADDED from C:\Users\v-ruchd\Desktop\la3011\Project1_3011\Project1\app\src\main\AndroidManifest.xml:50:9-60:19
 	android:enabled
 		ADDED from C:\Users\v-ruchd\Desktop\la3011\Project1_3011\Project1\app\src\main\AndroidManifest.xml:52:13-35
@@ -153,7 +153,7 @@ ADDED from C:\Users\v-ruchd\Desktop\la3011\Project1_3011\Project1\app\src\main\A
 		ADDED from C:\Users\v-ruchd\Desktop\la3011\Project1_3011\Project1\app\src\main\AndroidManifest.xml:59:17-52
 	android:name
 		ADDED from C:\Users\v-ruchd\Desktop\la3011\Project1_3011\Project1\app\src\main\AndroidManifest.xml:58:17-59
-service#project1.android.com.project2.sync.MovieAuthenticatorService
+service#project1.android.com.project1.sync.MovieAuthenticatorService
 ADDED from C:\Users\v-ruchd\Desktop\la3011\Project1_3011\Project1\app\src\main\AndroidManifest.xml:61:9-71:19
 	android:enabled
 		ADDED from C:\Users\v-ruchd\Desktop\la3011\Project1_3011\Project1\app\src\main\AndroidManifest.xml:63:13-35

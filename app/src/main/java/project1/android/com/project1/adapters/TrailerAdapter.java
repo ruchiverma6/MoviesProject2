@@ -13,7 +13,7 @@ import project1.android.com.project1.R;
 import project1.android.com.project1.data.MovieContract;
 
 /**
- * Created by v-ruchd on 11/21/2016.
+ * Created by ruchi on 11/21/2016.
  */
 
 public class TrailerAdapter extends CursorAdapter {

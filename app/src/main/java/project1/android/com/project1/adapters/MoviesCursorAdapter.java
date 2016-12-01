@@ -45,26 +45,6 @@ public class MoviesCursorAdapter extends CursorAdapter{
         return getCursor().getCount();
     }
 
-/* public MoviesArrayAdapter(Context context, ArrayList<ResultData> results) {
-        super(context, 0, results);
-        this.context=context;
-        this.results=results;
-        mLayoutInflater=(LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
-    }*/
-
-
-    /*@Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        result=getItem(position);
-        moviePosterImageUrl =String.format(Constant.MOVIE_POSTER_BASE_URL,Constant.MOVIE_POSTER_IMAGE_WIDTH).concat(result.getPoster_path());
-        if(convertView==null){
-            convertView=  mLayoutInflater.inflate(R.layout.grid_view_item,null);
-        }
-        mMoviePosterImageView=(ImageView)convertView.findViewById(R.id.movie_poster_image_view);
-        Picasso.with(context).load(moviePosterImageUrl).into(mMoviePosterImageView);
-        return convertView;
-    }*/
 
     @Override
     public View newView(Context context, Cursor cursor, ViewGroup parent) {
@@ -82,12 +62,5 @@ public class MoviesCursorAdapter extends CursorAdapter{
         Picasso.with(context).load(moviePosterImageUrl).into(mMoviePosterImageView);
     }
 
-   /* *//***
-     * Method to set data to views.
-     * @param results
-     *//*
-    public void setData(ArrayList<ResultData> results) {
-        this.results=results;
-        notifyDataSetChanged();
-    }*/
+
 }

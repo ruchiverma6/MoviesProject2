@@ -32,4 +32,6 @@
     <dimen name="trailer_layout_padding">40dp</dimen>
     <dimen name="review_layout_padding">10dp</dimen>
     <dimen name="list_border_width">2dp</dimen>
+    <dimen name="trailer_margin_top">52dp</dimen>
+
 </resources>

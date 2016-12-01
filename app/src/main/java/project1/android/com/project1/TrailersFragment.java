@@ -32,7 +32,7 @@ import project1.android.com.project1.data.TrailersData;
 import project1.android.com.project1.listeners.DataUpdateListener;
 
 /**
- * Created by v-ruchd on 11/21/2016.
+ * Created by ruchi on 11/21/2016.
  */
 
 public class TrailersFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor>, DataUpdateListener {

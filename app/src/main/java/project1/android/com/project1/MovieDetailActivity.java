@@ -99,7 +99,7 @@ public class MovieDetailActivity extends AppCompatActivity implements LoaderMana
                 } else if (reviewFragment != null) {
                     getSupportActionBar().setTitle(getString(R.string.reviews));
                 } else {
-                    getSupportActionBar().setTitle("Movie Detail");
+                    getSupportActionBar().setTitle(getString(R.string.title_activity_movie_detail));
                 }
             }
         });

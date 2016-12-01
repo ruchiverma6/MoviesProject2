@@ -30,4 +30,4 @@
         android:layout_marginLeft="@dimen/trailer_num_margin_left"
         android:gravity="center_vertical"
         android:text="Trailer 1" />
-</RelativeLayout><!-- From: file:/home/ruchi/Desktop/UdacityProjects/Project1/app/src/main/res/layout/movie_trailer_item.xml -->
+</RelativeLayout>

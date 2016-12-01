@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_you_tube_player.xml",
+        "source": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\src\\main\\res\\menu\\menu_you_tube_player.xml"
+    },
+    {
+        "merged": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_movie_detail.xml",
+        "source": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\src\\main\\res\\menu\\menu_movie_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_main.xml",
+        "source": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\src\\main\\res\\menu\\menu_main.xml"
+    }
+]

@@ -31,4 +31,3 @@
                  android:drawableStart="?android:attr/listChoiceIndicatorMultiple"
                  android:drawablePadding="20dp"
                  android:ellipsize="marquee" />
-<!-- From: file:/home/ruchi/Desktop/UdacityProjects/Project1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/select_dialog_multichoice_material.xml -->

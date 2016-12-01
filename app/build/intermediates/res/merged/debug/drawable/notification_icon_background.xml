@@ -19,4 +19,4 @@
     android:shape="oval">
     <solid
         android:color="@color/notification_icon_bg_color"/>
-</shape><!-- From: file:/home/ruchi/Desktop/UdacityProjects/Project1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/drawable/notification_icon_background.xml -->
+</shape>

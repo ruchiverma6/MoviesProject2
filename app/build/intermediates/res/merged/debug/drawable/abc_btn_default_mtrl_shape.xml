@@ -30,4 +30,3 @@
                  android:bottom="@dimen/abc_button_padding_vertical_material" />
     </shape>
 </inset>
-<!-- From: file:/home/ruchi/Desktop/UdacityProjects/Project1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/drawable/abc_btn_default_mtrl_shape.xml -->

@@ -26,4 +26,4 @@
     android:layout_weight="1"
     android:src="@android:drawable/ic_menu_close_clear_cancel"
     android:gravity="center"
-    android:visibility="gone"/><!-- From: file:/home/ruchi/Desktop/UdacityProjects/Project1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/notification_media_cancel_action.xml -->
+    android:visibility="gone"/>

@@ -26,4 +26,10 @@
     <dimen name="num_view_text_size">15sp</dimen>
     <dimen name="mark_as_btn_width">105dp</dimen>
     <dimen name="movie_desc_view_text_size">20sp</dimen>
+
+    <dimen name="trailer_num_text_margin_left">40dp</dimen>
+    <dimen name="trailer_list_item_height">260dp</dimen>
+    <dimen name="trailer_layout_padding">40dp</dimen>
+    <dimen name="review_layout_padding">10dp</dimen>
+    <dimen name="list_border_width">2dp</dimen>
 </resources>

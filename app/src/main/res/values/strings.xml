@@ -9,4 +9,17 @@
     <string name="sort_by_key" >sortby</string>
     <string name="no_internet_connectivity_msg">No Internet Connection. Please Connect to internet.</string>
     <string name="data_no_retrival_message">Unable to retrieve data. Please try again later.</string>
+    <string name="most_popular">mostpopular</string>
+    <string name="top_rated">toprated</string>
+    <string name="trailers">Trailers</string>
+    <string name="reviews">Reviews</string>
+    <string name="favorite">favorite</string>
+    <string name="no_fav_movies">No movies added as favorite. Please mark movies as favorite from detail screen.</string>
+    <string name="title_activity_you_tube_player">YouTubePlayerActivity</string>
+    <string name="error_player">Error occurred.</string>
+    <string name="trailer_id">traileid</string>
+    <string name="content_authority">project1.android.com.project1</string>
+    <string name="sync_account_type">android.com.project1</string>
+    <string name="no_trailer_msg">No trailers for this movie.</string>
+    <string name="no_review">No reviews for this movie.</string>
 </resources>

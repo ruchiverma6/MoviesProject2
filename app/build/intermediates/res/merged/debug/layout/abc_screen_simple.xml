@@ -32,4 +32,3 @@
     <include layout="@layout/abc_screen_content_include" />
 
 </android.support.v7.widget.FitWindowsLinearLayout>
-<!-- From: file:/home/ruchi/Desktop/UdacityProjects/Project1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_screen_simple.xml -->

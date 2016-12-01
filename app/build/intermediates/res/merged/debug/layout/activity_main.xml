@@ -33,8 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:gravity="center"
-
         android:visibility="gone"
         android:layout_gravity="center_horizontal" />
 
-</LinearLayout><!-- From: file:/home/ruchi/Desktop/UdacityProjects/Project1/app/src/main/res/layout/activity_main.xml -->
+</LinearLayout>

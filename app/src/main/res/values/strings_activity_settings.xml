@@ -18,12 +18,12 @@
     <string-array name="pref_sortby_list_titles">
         <item>Most Popular Movies</item>
         <item>Top Rated</item>
-
+        <item>Favorite</item>
     </string-array>
     <string-array name="pref_sortby_list_values">
         <item>popular</item>
         <item>top_rated</item>
-
+        <item>favorite</item>
     </string-array>
 
     <string name="prefs_sort_default_value">popular</string>

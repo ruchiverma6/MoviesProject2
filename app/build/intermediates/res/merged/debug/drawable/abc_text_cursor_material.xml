@@ -20,4 +20,4 @@
     <size android:height="2dp"
           android:width="2dp"/>
     <solid android:color="@android:color/white"/>
-</shape><!-- From: file:/home/ruchi/Desktop/UdacityProjects/Project1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/drawable/abc_text_cursor_material.xml -->
+</shape>

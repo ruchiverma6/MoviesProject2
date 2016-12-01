@@ -11,4 +11,4 @@
     android:background="?attr/colorPrimary"
     app:navigationIcon="?attr/homeAsUpIndicator"
     app:title="@string/action_settings"
-    /><!-- From: file:/home/ruchi/Desktop/UdacityProjects/Project1/app/src/main/res/layout/toolbar.xml -->
+    />

@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/home/ruchi/Desktop/UdacityProjects/Project1/app/src/main/res/values/strings_activity_settings.xml -->
-    <eat-comment/>
     <string-array name="pref_sortby_list_titles">
         <item>Most Popular Movies</item>
         <item>Top Rated</item>
-
+        <item>Favorite</item>
     </string-array>
     <string-array name="pref_sortby_list_values">
         <item>popular</item>
         <item>top_rated</item>
-
+        <item>favorite</item>
     </string-array>
     <string-array name="pref_sync_frequency_titles">
         <item>15 minutes</item>
@@ -28,8 +26,6 @@
         <item>360</item>
         <item>-1</item>
     </string-array>
-    <!-- From: file:/home/ruchi/Desktop/UdacityProjects/Project1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/values/values.xml -->
-    <eat-comment/>
     <attr format="reference" name="drawerArrowStyle"/>
     <attr format="dimension" name="height"/>
     <attr format="boolean" name="isLightTheme"/>
@@ -57,29 +53,17 @@
     <color name="bright_foreground_material_light">@android:color/black</color>
     <color name="button_material_dark">#ff5a595b</color>
     <color name="button_material_light">#ffd6d7d7</color>
-    <!-- From: file:/home/ruchi/Desktop/UdacityProjects/Project1/app/src/main/res/values/color.xml -->
-    <eat-comment/>
     <color name="dark_gray">#383a3a</color>
-    <!-- From: file:/home/ruchi/Desktop/UdacityProjects/Project1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/values/values.xml -->
-    <eat-comment/>
     <color name="dim_foreground_disabled_material_dark">#80bebebe</color>
     <color name="dim_foreground_disabled_material_light">#80323232</color>
     <color name="dim_foreground_material_dark">#ffbebebe</color>
     <color name="dim_foreground_material_light">#ff323232</color>
     <color name="foreground_material_dark">@android:color/white</color>
     <color name="foreground_material_light">@android:color/black</color>
-    <!-- From: file:/home/ruchi/Desktop/UdacityProjects/Project1/app/src/main/res/values/color.xml -->
-    <eat-comment/>
     <color name="green_color">#55997f</color>
-    <!-- From: file:/home/ruchi/Desktop/UdacityProjects/Project1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/values/values.xml -->
-    <eat-comment/>
     <color name="highlighted_text_material_dark">#6680cbc4</color>
     <color name="highlighted_text_material_light">#66009688</color>
-    <!-- From: file:/home/ruchi/Desktop/UdacityProjects/Project1/app/src/main/res/values/color.xml -->
-    <eat-comment/>
     <color name="light_gray">#8d9695</color>
-    <!-- From: file:/home/ruchi/Desktop/UdacityProjects/Project1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/values/values.xml -->
-    <eat-comment/>
     <color name="material_blue_grey_800">#ff37474f</color>
     <color name="material_blue_grey_900">#ff263238</color>
     <color name="material_blue_grey_950">#ff21272b</color>
@@ -109,11 +93,7 @@
     <color name="secondary_text_default_material_light">#8a000000</color>
     <color name="secondary_text_disabled_material_dark">#36ffffff</color>
     <color name="secondary_text_disabled_material_light">#24000000</color>
-    <!-- From: file:/home/ruchi/Desktop/UdacityProjects/Project1/app/src/main/res/values/color.xml -->
-    <eat-comment/>
     <color name="sky_green_color">#34c9bd</color>
-    <!-- From: file:/home/ruchi/Desktop/UdacityProjects/Project1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/values/values.xml -->
-    <eat-comment/>
     <color name="switch_thumb_disabled_material_dark">#ff616161</color>
     <color name="switch_thumb_disabled_material_light">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_dark">#ffbdbdbd</color>
@@ -222,12 +202,8 @@
     <dimen name="abc_text_size_subtitle_material_toolbar">16dp</dimen>
     <dimen name="abc_text_size_title_material">20sp</dimen>
     <dimen name="abc_text_size_title_material_toolbar">20dp</dimen>
-    <!-- From: file:/home/ruchi/Desktop/UdacityProjects/Project1/app/src/main/res/values/dimens.xml -->
-    <eat-comment/>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    <!-- From: file:/home/ruchi/Desktop/UdacityProjects/Project1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/values/values.xml -->
-    <eat-comment/>
     <item format="float" name="disabled_alpha_material_dark" type="dimen">0.30</item>
     <item format="float" name="disabled_alpha_material_light" type="dimen">0.26</item>
     <item format="float" name="highlight_alpha_material_colored" type="dimen">0.26</item>
@@ -237,9 +213,8 @@
     <item format="float" name="hint_alpha_material_light" type="dimen">0.38</item>
     <item format="float" name="hint_pressed_alpha_material_dark" type="dimen">0.70</item>
     <item format="float" name="hint_pressed_alpha_material_light" type="dimen">0.54</item>
-    <!-- From: file:/home/ruchi/Desktop/UdacityProjects/Project1/app/src/main/res/values/dimens.xml -->
-    <eat-comment/>
     <dimen name="hour_min_view_text_size">20sp</dimen>
+    <dimen name="list_border_width">2dp</dimen>
     <dimen name="mark_as_btn_width">105dp</dimen>
     <dimen name="movie_desc_view_text_size">20sp</dimen>
     <dimen name="movie_poster_detai_height">195dp</dimen>
@@ -254,8 +229,6 @@
     <dimen name="movie_poster_title_margin_left">25dp</dimen>
     <dimen name="movie_poster_title_text_size">30sp</dimen>
     <dimen name="movie_poster_width">35dp</dimen>
-    <!-- From: file:/home/ruchi/Desktop/UdacityProjects/Project1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/values/values.xml -->
-    <eat-comment/>
     <dimen name="notification_action_icon_size">32dp</dimen>
     <dimen name="notification_action_text_size">13sp</dimen>
     <dimen name="notification_big_circle_margin">12dp</dimen>
@@ -271,17 +244,17 @@
     <dimen name="notification_subtext_size">13sp</dimen>
     <dimen name="notification_top_pad">10dp</dimen>
     <dimen name="notification_top_pad_large_text">5dp</dimen>
-    <!-- From: file:/home/ruchi/Desktop/UdacityProjects/Project1/app/src/main/res/values/dimens.xml -->
-    <eat-comment/>
     <dimen name="num_view_text_size">15sp</dimen>
+    <dimen name="review_layout_padding">10dp</dimen>
+    <dimen name="trailer_layout_padding">40dp</dimen>
+    <dimen name="trailer_list_item_height">260dp</dimen>
     <dimen name="trailer_num_margin_left">10dp</dimen>
     <dimen name="trailer_num_size">20dp</dimen>
+    <dimen name="trailer_num_text_margin_left">40dp</dimen>
     <dimen name="trailer_num_textview_mrgin_left">45dp</dimen>
     <dimen name="trailer_play_icon_margin_top">35dp</dimen>
     <dimen name="trailer_title_size">25dp</dimen>
     <dimen name="year_view_text_size">25sp</dimen>
-    <!-- From: file:/home/ruchi/Desktop/UdacityProjects/Project1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/values/values.xml -->
-    <eat-comment/>
     <drawable name="notification_template_icon_bg">#3333B5E5</drawable>
     <drawable name="notification_template_icon_low_bg">#0cffffff</drawable>
     <item name="action_bar_activity_content" type="id"/>
@@ -296,11 +269,7 @@
     <integer name="abc_config_activityDefaultDur">220</integer>
     <integer name="abc_config_activityShortDur">150</integer>
     <integer name="cancel_button_image_alpha">127</integer>
-    <!-- From: file:/home/ruchi/Desktop/UdacityProjects/Project1/app/src/main/res/values/integers.xml -->
-    <eat-comment/>
     <integer name="grid_column_count">4</integer>
-    <!-- From: file:/home/ruchi/Desktop/UdacityProjects/Project1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/values/values.xml -->
-    <eat-comment/>
     <integer name="status_bar_notification_info_maxnum">999</integer>
     <string name="abc_action_bar_home_description">Navigate home</string>
     <string name="abc_action_bar_home_description_format">%1$s, %2$s</string>
@@ -333,17 +302,20 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
-    <!-- From: file:/home/ruchi/Desktop/UdacityProjects/Project1/app/src/main/res/values/strings.xml -->
-    <eat-comment/>
     <string name="action_settings">Settings</string>
     <string name="app_name">Movies</string>
+    <string name="content_authority">project1.android.com.project1</string>
     <string name="data_no_retrival_message">Unable to retrieve data. Please try again later.</string>
+    <string name="error_player">Error occurred.</string>
+    <string name="favorite">favorite</string>
     <string name="hello_world">Hello world!</string>
     <string name="mark_as_favorite">MARK AS FAVORITE</string>
     <string name="min">min</string>
+    <string name="most_popular">mostpopular</string>
+    <string name="no_fav_movies">No movies added as favorite. Please mark movies as favorite from detail screen.</string>
     <string name="no_internet_connectivity_msg">No Internet Connection. Please Connect to internet.</string>
-    <!-- From: file:/home/ruchi/Desktop/UdacityProjects/Project1/app/src/main/res/values/strings_activity_settings.xml -->
-    <eat-comment/>
+    <string name="no_review">No reviews for this movie.</string>
+    <string name="no_trailer_msg">No trailers for this movie.</string>
     <string name="pref_default_display_name">John Smith</string>
     <string name="pref_description_social_recommendations">Recommendations for people to contact
         based on your message history
@@ -361,34 +333,24 @@
     <string name="pref_title_system_sync_settings">System sync settings</string>
     <string name="pref_title_vibrate">Vibrate</string>
     <string name="prefs_sort_default_value">popular</string>
-    <!-- From: file:/home/ruchi/Desktop/UdacityProjects/Project1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/values/values.xml -->
-    <eat-comment/>
+    <string name="reviews">Reviews</string>
     <string name="search_menu_title">Search</string>
-    <!-- From: file:/home/ruchi/Desktop/UdacityProjects/Project1/app/src/main/res/values/strings.xml -->
-    <eat-comment/>
     <string name="sort_by_key">sortby</string>
-    <!-- From: file:/home/ruchi/Desktop/UdacityProjects/Project1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/values/values.xml -->
-    <eat-comment/>
     <string name="status_bar_notification_info_overflow">999+</string>
-    <!-- From: file:/home/ruchi/Desktop/UdacityProjects/Project1/app/src/main/res/values/strings.xml -->
-    <eat-comment/>
+    <string name="sync_account_type">android.com.project1</string>
     <string name="title_activity_movie_detail">Movie Detail</string>
-    <!-- From: file:/home/ruchi/Desktop/UdacityProjects/Project1/app/src/main/res/values/strings_activity_settings.xml -->
-    <eat-comment/>
     <string name="title_activity_settings">Settings</string>
-    <!-- From: file:/home/ruchi/Desktop/UdacityProjects/Project1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/values/values.xml -->
-    <eat-comment/>
+    <string name="title_activity_you_tube_player">YouTubePlayerActivity</string>
+    <string name="top_rated">toprated</string>
+    <string name="trailer_id">traileid</string>
+    <string name="trailers">Trailers</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>
     <style name="Animation.AppCompat.DropDownUp" parent="Base.Animation.AppCompat.DropDownUp"/>
-    <!-- From: file:/home/ruchi/Desktop/UdacityProjects/Project1/app/src/main/res/values/styles.xml -->
-    <eat-comment/>
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
     </style>
-    <!-- From: file:/home/ruchi/Desktop/UdacityProjects/Project1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/values/values.xml -->
-    <eat-comment/>
     <style name="Base.AlertDialog.AppCompat" parent="android:Widget">
         <item name="android:layout">@layout/abc_alert_dialog_material</item>
         <item name="listLayout">@layout/abc_select_dialog_material</item>
@@ -1759,8 +1721,6 @@
     <style name="Widget.AppCompat.TextView.SpinnerItem" parent="Base.Widget.AppCompat.TextView.SpinnerItem"/>
     <style name="Widget.AppCompat.Toolbar" parent="Base.Widget.AppCompat.Toolbar"/>
     <style name="Widget.AppCompat.Toolbar.Button.Navigation" parent="Base.Widget.AppCompat.Toolbar.Button.Navigation"/>
-    <!-- From: file:/home/ruchi/Desktop/UdacityProjects/Project1/app/src/main/res/values/styles.xml -->
-    <eat-comment/>
     <style name="hour_min_view_style">
         <item name="android:textStyle">italic</item>
         <item name="android:textColor">@color/dark_gray</item>

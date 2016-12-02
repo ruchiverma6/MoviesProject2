@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -29,7 +30,7 @@ import project1.android.com.project1.data.MovieData;
 import project1.android.com.project1.data.ResultData;
 import project1.android.com.project1.listeners.DataUpdateListener;
 
-public class MainActivity extends ActionBarActivity implements AdapterView.OnItemClickListener, DataUpdateListener, LoaderManager.LoaderCallbacks<Cursor> {
+public class MainActivity extends ActionBarActivity implements AdapterView.OnItemClickListener, DataUpdateListener, LoaderManager.LoaderCallbacks<Cursor>,MovieFragment.Callback {
 
     //Reference variable to hold Grid view object
     private GridView mGridView;
@@ -50,7 +51,8 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
     private Cursor existingCursor;
     private String selectedSortBy;
     private boolean isRestarted = false;
-
+    private boolean mTwoPane;
+    private static final String DETAILFRAGMENT_TAG = "DFTAG";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,13 +62,28 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
         if (null != savedInstanceState) {
             results = savedInstanceState.getParcelableArrayList(Constant.RESULT_DATA_ARRAY);
         }
-        selectedSortBy = Utils.getSharedPreferenceValue(this, getString(R.string.sort_by_key));
+      //  selectedSortBy = Utils.getSharedPreferenceValue(this, getString(R.string.sort_by_key));
         setUpActionBar();
 
-        initComponents();
-
-        getSupportLoaderManager().initLoader(MOVIE_LOADER, null, this);
-        downloadData();
+       // initComponents();
+        if (findViewById(R.id.weather_detail_container) != null) {
+            // The detail container view will be present only in the large-screen layouts
+            // (res/layout-sw600dp). If this view is present, then the activity should be
+            // in two-pane mode.
+            mTwoPane = true;
+            // In two-pane mode, show the detail view in this activity by
+            // adding or replacing the detail fragment using a
+            // fragment transaction.
+            if (savedInstanceState == null) {
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.weather_detail_container, new DetailFragment(), DETAILFRAGMENT_TAG)
+                        .commit();
+            }
+        } else {
+            mTwoPane = false;
+        }
+      //  getSupportLoaderManager().initLoader(MOVIE_LOADER, null, this);
+     //   downloadData();
 
     }
 
@@ -79,10 +96,10 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
     @Override
     protected void onResume() {
         super.onResume();
-        if (isRestarted) {
+      /*  if (isRestarted) {
             getSupportLoaderManager().restartLoader(MOVIE_LOADER, null, this);
             isRestarted = false;
-        }
+        }*/
 
     }
 
@@ -247,5 +264,28 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
         mMovieCursorAdapter.swapCursor(null);
+    }
+
+    @Override
+    public void onItemSelected(Uri contentUri) {
+        Toast.makeText(this,"gjh",Toast.LENGTH_LONG).show();
+        if (mTwoPane) {
+            // In two-pane mode, show the detail view in this activity by
+            // adding or replacing the detail fragment using a
+            // fragment transaction.
+          /*  Bundle args = new Bundle();
+            args.putParcelable(DetailFragment.DETAIL_URI, contentUri);
+
+            DetailFragment fragment = new DetailFragment();
+            fragment.setArguments(args);
+
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.weather_detail_container, fragment, DETAILFRAGMENT_TAG)
+                    .commit();*/
+        } else {
+            Intent intent = new Intent(this, DetailActivity.class)
+                    .setData(contentUri);
+            startActivity(intent);
+        }
     }
 }

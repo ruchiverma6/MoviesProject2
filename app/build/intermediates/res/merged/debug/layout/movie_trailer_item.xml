@@ -9,7 +9,7 @@
         style="@style/trailers_title_view_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Trailers:" />
+        android:text="@string/trailers" />
 
     <ImageView
         android:id="@+id/trailer_play_icon"
@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/trailer_play_icon"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="@dimen/trailer_margin_top"
         android:layout_marginLeft="@dimen/trailer_num_margin_left"
         android:gravity="center_vertical"
         android:text="Trailer 1" />

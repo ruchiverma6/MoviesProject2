@@ -96,6 +96,27 @@
                         "endOffset": 100
                     }
                 }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 378,
+                    "endLine": 10,
+                    "endColumn": 12,
+                    "endOffset": 555
+                },
+                "from": {
+                    "file": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\values-land\\values-land.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endLine": 5,
+                        "endColumn": 12,
+                        "endOffset": 232
+                    }
+                }
             }
         ]
     }

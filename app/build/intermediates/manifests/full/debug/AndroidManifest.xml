@@ -31,8 +31,7 @@
         </activity>
         <activity
             android:name="project1.android.com.project1.MovieDetailActivity"
-            android:label="@string/title_activity_movie_detail" >
-        </activity>
+            android:label="@string/title_activity_movie_detail" />
         <activity
             android:name="project1.android.com.project1.SettingsActivity"
             android:label="@string/title_activity_settings"
@@ -48,8 +47,7 @@
 
         <activity
             android:name="project1.android.com.project1.YouTubePlayerActivity"
-            android:label="@string/title_activity_you_tube_player" >
-        </activity>
+            android:label="@string/title_activity_you_tube_player" />
 
         <service
             android:name="project1.android.com.project1.sync.MovieSyncService"
@@ -75,6 +73,11 @@
                 android:name="android.accounts.AccountAuthenticator"
                 android:resource="@xml/authenticator" />
         </service>
+
+        <activity
+            android:name="project1.android.com.project1.DetailActivity"
+            android:label="@string/title_activity_detail"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
     </application>
 
 </manifest>

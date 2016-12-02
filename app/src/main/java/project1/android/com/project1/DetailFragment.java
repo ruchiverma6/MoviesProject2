@@ -91,7 +91,11 @@ public class DetailFragment extends Fragment implements LoaderManager.LoaderCall
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mActivity = getActivity();
-    //    uri = getIntent().getData();
+        Bundle arguments = getArguments();
+        if (arguments != null) {
+            uri = arguments.getParcelable(DetailFragment.DETAIL_URI);
+            movieId=uri.getPathSegments().get(2);
+        }
         setUpActionBar();
        // Bundle bundle = getIntent().getExtras();
       //  movieId = bundle.getString(Constant.movie_id_key);

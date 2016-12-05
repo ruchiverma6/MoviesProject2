@@ -26,8 +26,8 @@ import android.widget.ToggleButton;
 
 import com.squareup.picasso.Picasso;
 
-import project1.android.com.project1.Helper.Constant;
-import project1.android.com.project1.Helper.Utils;
+import project1.android.com.project1.helper.Constant;
+import project1.android.com.project1.helper.Utils;
 import project1.android.com.project1.adapters.MoviesCursorAdapter;
 import project1.android.com.project1.data.MovieContract;
 
@@ -91,12 +91,13 @@ public class DetailFragment extends Fragment implements LoaderManager.LoaderCall
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mActivity = getActivity();
+       // ((MainActivity)mActivity).setActionBarTitle(getString(R.string.title_activity_movie_detail));
         Bundle arguments = getArguments();
         if (arguments != null) {
             uri = arguments.getParcelable(DetailFragment.DETAIL_URI);
             movieId=uri.getPathSegments().get(2);
         }
-        setUpActionBar();
+
        // Bundle bundle = getIntent().getExtras();
       //  movieId = bundle.getString(Constant.movie_id_key);
         initComponents();
@@ -106,20 +107,23 @@ public class DetailFragment extends Fragment implements LoaderManager.LoaderCall
             public void onBackStackChanged() {
                 Fragment trailerFragment = getChildFragmentManager().findFragmentByTag(getString(R.string.trailers));
                 Fragment reviewFragment = getChildFragmentManager().findFragmentByTag(getString(R.string.reviews));
+                String title;
                 if (trailerFragment != null) {
-                  //  getSupportActionBar().setTitle(getString(R.string.trailers));
+                 title=getString(R.string.trailers);
                 } else if (reviewFragment != null) {
-                   // getSupportActionBar().setTitle(getString(R.string.reviews));
+                    title=getString(R.string.reviews);
                 } else {
-                  //  getSupportActionBar().setTitle(getString(R.string.title_activity_movie_detail));
+                    title=getString(R.string.title_activity_movie_detail);
                 }
+              //  ((DetailActivity)mActivity).setActionBarTitle(title);
             }
         });
     }
 
-    private void setUpActionBar() {
-      /*  Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
-        setSupportActionBar(myToolbar);*/
+    @Override
+    public void onResume() {
+        super.onResume();
+
     }
 
     /***
@@ -175,6 +179,9 @@ public class DetailFragment extends Fragment implements LoaderManager.LoaderCall
 
     @Override
     public Loader<Cursor> onCreateLoader(int id, Bundle args) {
+        if(movieId==null){
+            return null;
+        }
         String selection = MovieContract.MovieEntry.COLUMN_MOVIE_ID + " =? ";
         String[] selectionArgs = new String[]{movieId};
         return new CursorLoader(mActivity, MovieContract.MovieEntry.CONTENT_URI, null, selection, selectionArgs, null);
@@ -182,7 +189,9 @@ public class DetailFragment extends Fragment implements LoaderManager.LoaderCall
 
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
-        setDataOnUI(data);
+        if(null!=data && data.moveToFirst()) {
+            setDataOnUI(data);
+        }
     }
 
     @Override
@@ -224,7 +233,7 @@ public class DetailFragment extends Fragment implements LoaderManager.LoaderCall
         mMoviePosterTitleTextView.setVisibility(View.VISIBLE);
         // mDetailLayout.setVisibility(View.VISIBLE);
         mErrorTextView.setVisibility(View.GONE);
-        cursor.moveToFirst();
+
         moviePosterImageUrl = String.format(Constant.MOVIE_POSTER_BASE_URL, Constant.MOVIE_POSTER_IMAGE_WIDTH).concat(cursor.getString(cursor.getColumnIndex(MovieContract.MovieEntry.COLUMN_MOVIE_POSTER_URL)));
 
         mMovieDescriptionTextView.setText(cursor.getString(cursor.getColumnIndex(MovieContract.MovieEntry.COLUMN_DESCRIPTION)));

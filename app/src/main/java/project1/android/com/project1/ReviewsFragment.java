@@ -16,8 +16,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import project1.android.com.project1.Helper.Constant;
-import project1.android.com.project1.Helper.Utils;
+import project1.android.com.project1.helper.Constant;
+import project1.android.com.project1.helper.Utils;
 import project1.android.com.project1.adapters.ReviewAdapter;
 import project1.android.com.project1.data.Data;
 import project1.android.com.project1.data.ErrorInfo;
@@ -48,6 +48,7 @@ public class ReviewsFragment extends Fragment implements LoaderManager.LoaderCal
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mActivity = getActivity();
+        ((DetailActivity) mActivity).setActionBarTitle(getString(R.string.reviews));
         Bundle bundle = getArguments();
         if (null != bundle) {
             movieId = bundle.getString(Constant.MOVIE_ID_KEY);
@@ -107,17 +108,18 @@ public class ReviewsFragment extends Fragment implements LoaderManager.LoaderCal
 
     @Override
     public void onDataUpdate(Data reviewData) {
-
-        if (null != reviewData && reviewData instanceof ErrorInfo) {
-            updateErrorMsgOnUI(((ErrorInfo) reviewData).getErrorMsg());
-        } else {
-            ArrayList<ReviewResult> results = ((ReviewData) reviewData).getResults();
-            if (null != results && results.size() == 0) {
-                updateErrorMsgOnUI(getString(R.string.no_review));
+        if (isAdded()) {
+            if (null != reviewData && reviewData instanceof ErrorInfo) {
+                updateErrorMsgOnUI(((ErrorInfo) reviewData).getErrorMsg());
             } else {
-                updateDataOnUI();
-            }
+                ArrayList<ReviewResult> results = ((ReviewData) reviewData).getResults();
+                if (null != results && results.size() == 0) {
+                    updateErrorMsgOnUI(getString(R.string.no_review));
+                } else {
+                    updateDataOnUI();
+                }
 
+            }
         }
     }
 

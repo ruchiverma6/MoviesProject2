@@ -27,8 +27,8 @@ import android.widget.ToggleButton;
 
 import com.squareup.picasso.Picasso;
 
-import project1.android.com.project1.Helper.Constant;
-import project1.android.com.project1.Helper.Utils;
+import project1.android.com.project1.helper.Constant;
+import project1.android.com.project1.helper.Utils;
 import project1.android.com.project1.data.ErrorInfo;
 import project1.android.com.project1.data.MovieContract;
 

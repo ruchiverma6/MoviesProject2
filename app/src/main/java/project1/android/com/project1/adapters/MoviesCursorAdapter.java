@@ -12,7 +12,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-import project1.android.com.project1.Helper.Constant;
+import project1.android.com.project1.helper.Constant;
 import project1.android.com.project1.R;
 import project1.android.com.project1.data.MovieContract;
 import project1.android.com.project1.data.ResultData;

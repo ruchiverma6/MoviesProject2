@@ -21,8 +21,8 @@ import com.google.android.youtube.player.YouTubeStandalonePlayer;
 
 import java.util.ArrayList;
 
-import project1.android.com.project1.Helper.Constant;
-import project1.android.com.project1.Helper.Utils;
+import project1.android.com.project1.helper.Constant;
+import project1.android.com.project1.helper.Utils;
 import project1.android.com.project1.adapters.TrailerAdapter;
 import project1.android.com.project1.data.Data;
 import project1.android.com.project1.data.ErrorInfo;
@@ -58,6 +58,7 @@ public class TrailersFragment extends Fragment implements LoaderManager.LoaderCa
         super.onActivityCreated(savedInstanceState);
 
         mActivity = getActivity();
+       // ((DetailActivity)mActivity).setActionBarTitle(getString(R.string.trailers));
         Bundle bundle = getArguments();
         movieID = bundle.getString(Constant.MOVIE_ID_KEY);
         initComponents();
@@ -155,6 +156,7 @@ public class TrailersFragment extends Fragment implements LoaderManager.LoaderCa
 
     @Override
     public void onDataUpdate(Data trailerData) {
+        if (isAdded()) {
         mProgressBar.setVisibility(View.GONE);
         if (null != trailerData && trailerData instanceof ErrorInfo) {
             updateErrorMsgOnUI(((ErrorInfo) trailerData).getErrorMsg());
@@ -166,7 +168,7 @@ public class TrailersFragment extends Fragment implements LoaderManager.LoaderCa
             } else {
                 updateDataOnUI();
             }
-
+        }
         }
 
     }

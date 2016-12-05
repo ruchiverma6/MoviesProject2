@@ -1,5 +1,6 @@
 package project1.android.com.project1;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.media.Ringtone;
@@ -11,9 +12,11 @@ import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
 import android.preference.RingtonePreference;
+import android.support.v4.app.NavUtils;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 
@@ -32,10 +35,12 @@ import android.widget.LinearLayout;
 public class SettingsActivity extends PreferenceActivity implements Preference.OnPreferenceChangeListener{
 
 private Context context;
+    private Activity mActivity;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         context=this;
+        mActivity=this;
         addPreferencesFromResource(R.xml.pref_general);
         PreferenceManager.setDefaultValues(this, R.xml.pref_general, false);
         bindPreferenceSummaryToValue(findPreference(getString(R.string.sort_by_key)));
@@ -53,16 +58,23 @@ private Context context;
         bar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-             Intent intent=new Intent(context,MainActivity.class);
-                startActivity(intent);
+            /* Intent intent=new Intent(context,MainActivity.class);
+                startActivity(intent);*/
+                NavUtils.navigateUpFromSameTask(mActivity);
             }
         });
     }
 
 
-
-
-
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                NavUtils.navigateUpFromSameTask(this);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     /**
      * A preference value change listener that updates the preference's summary
@@ -146,7 +158,7 @@ private Context context;
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        launchMainMoviesScreen();
+       // launchMainMoviesScreen();
     }
 
     /***

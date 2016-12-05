@@ -20,8 +20,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import project1.android.com.project1.Helper.Constant;
-import project1.android.com.project1.Helper.Utils;
+import project1.android.com.project1.helper.Constant;
+import project1.android.com.project1.helper.Utils;
 import project1.android.com.project1.adapters.MoviesCursorAdapter;
 import project1.android.com.project1.data.Data;
 import project1.android.com.project1.data.ErrorInfo;
@@ -67,12 +67,24 @@ public class MovieFragment extends Fragment implements AdapterView.OnItemClickLi
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mActivity = getActivity();
+
         selectedSortBy = Utils.getSharedPreferenceValue(mActivity, getString(R.string.sort_by_key));
         initComponents();
         getLoaderManager().initLoader(MOVIE_LOADER, null, this);
-        downloadData();
     }
 
+    private Cursor getData() {
+        Uri urin = MovieContract.MovieEntry.buildMovieWithSortBy(Utils.getSharedPreferenceValue(mActivity, getString(R.string.sort_by_key)));
+
+        Cursor cursorn = mActivity.getContentResolver().query(urin, null, null, null, null);
+        return cursorn;
+    }
+    @Override
+    public void onResume() {
+        super.onResume();
+        existingCursor = getData();
+        downloadData();
+    }
 
     /***
      * Method to download data based on selected sort type.
@@ -83,8 +95,7 @@ public class MovieFragment extends Fragment implements AdapterView.OnItemClickLi
         } else {
             selectedSortBy = Utils.getSharedPreferenceValue(mActivity, getString(R.string.sort_by_key));
             if (selectedSortBy.equals(getString(R.string.favorite))) {
-                mErrorTextView.setVisibility(View.VISIBLE);
-                mErrorTextView.setText(getString(R.string.no_fav_movies));
+                getLoaderManager().restartLoader(MOVIE_LOADER, null, this);
             } else {
                 Utils.downloadData(mActivity, String.format(Constant.POPULAR_MOVIES_URL, selectedSortBy, Constant.MOVIE_DB_API_KEY), this, Constant.MOVIE_TYPE, selectedSortBy);
             }
@@ -180,13 +191,15 @@ public class MovieFragment extends Fragment implements AdapterView.OnItemClickLi
 
     @Override
     public void onDataUpdate(Data movieData) {
-        if (null != movieData && movieData instanceof ErrorInfo) {
-            updateErrorMsgOnUI((ErrorInfo) movieData);
-        } else {
+        if (isAdded()) {
+            if (null != movieData && movieData instanceof ErrorInfo) {
+                updateErrorMsgOnUI((ErrorInfo) movieData);
+            } else {
 
-            results = ((MovieData) movieData).getResults();
-
-            updateDataOnUI();
+                results = ((MovieData) movieData).getResults();
+mGridView.setSelection(0);
+                updateDataOnUI();
+            }
         }
     }
 

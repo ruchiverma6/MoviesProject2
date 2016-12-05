@@ -4,14 +4,13 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
     </style>
-
-    <style name="movie_poster_title_style">
-        <item name="android:textColor">@android:color/white</item>
-        <item name="android:background">@color/green_color</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:textSize">@dimen/movie_poster_title_text_size</item>
-    </style>
-
+<style name="movie_poster_title_style">
+    <item name="android:textColor">@android:color/white</item>
+    <item name="android:background">@color/green_color</item>
+    <item name="android:textStyle">bold</item>
+    <item name="android:textSize">@dimen/movie_poster_title_text_size</item>
+</style>
+    
     <style name="trailers_title_view_style">
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@android:color/darker_gray</item>
@@ -35,7 +34,6 @@
         <item name="android:textColor">@color/dark_gray</item>
         <item name="android:textSize">@dimen/hour_min_view_text_size</item>
     </style>
-
     <style name="num_view_style">
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/dark_gray</item>

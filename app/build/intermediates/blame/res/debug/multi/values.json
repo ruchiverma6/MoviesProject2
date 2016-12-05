@@ -3675,14 +3675,7 @@
                     "endOffset": 46502
                 },
                 "from": {
-                    "file": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\src\\main\\res\\values\\strings.xml",
-                    "position": {
-                        "startLine": 27,
-                        "startColumn": 4,
-                        "startOffset": 1539,
-                        "endColumn": 69,
-                        "endOffset": 1604
-                    }
+                    "file": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\src\\main\\res\\values\\strings.xml"
                 }
             },
             {
@@ -8563,21 +8556,29 @@
                     "startColumn": 4,
                     "startOffset": 149623,
                     "endLine": 1931,
-                    "endColumn": 12,
-                    "endOffset": 149940
+                    "endColumn": 8,
+                    "endOffset": 149920
                 },
                 "from": {
-                    "file": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\src\\main\\res\\values\\styles.xml"
+                    "file": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\src\\main\\res\\values\\styles.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 0,
+                        "startOffset": 180,
+                        "endLine": 11,
+                        "endColumn": 8,
+                        "endOffset": 477
+                    }
                 }
             },
             {
                 "to": {
                     "startLine": 1932,
                     "startColumn": 4,
-                    "startOffset": 149945,
+                    "startOffset": 149925,
                     "endLine": 1936,
                     "endColumn": 12,
-                    "endOffset": 150172
+                    "endOffset": 150152
                 },
                 "from": {
                     "file": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\src\\main\\res\\values\\styles.xml"
@@ -8587,10 +8588,10 @@
                 "to": {
                     "startLine": 1937,
                     "startColumn": 4,
-                    "startOffset": 150177,
+                    "startOffset": 150157,
                     "endLine": 1941,
                     "endColumn": 12,
-                    "endOffset": 150421
+                    "endOffset": 150401
                 },
                 "from": {
                     "file": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\src\\main\\res\\values\\styles.xml"
@@ -8600,10 +8601,10 @@
                 "to": {
                     "startLine": 1942,
                     "startColumn": 4,
-                    "startOffset": 150426,
+                    "startOffset": 150406,
                     "endLine": 1946,
                     "endColumn": 12,
-                    "endOffset": 150674
+                    "endOffset": 150654
                 },
                 "from": {
                     "file": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\src\\main\\res\\values\\styles.xml"
@@ -8613,10 +8614,10 @@
                 "to": {
                     "startLine": 1947,
                     "startColumn": 4,
-                    "startOffset": 150679,
+                    "startOffset": 150659,
                     "endLine": 1951,
                     "endColumn": 12,
-                    "endOffset": 150858
+                    "endOffset": 150838
                 },
                 "from": {
                     "file": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\src\\main\\res\\values\\styles.xml"

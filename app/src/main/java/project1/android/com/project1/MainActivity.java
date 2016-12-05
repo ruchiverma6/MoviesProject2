@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,12 +16,11 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import project1.android.com.project1.Helper.Constant;
-import project1.android.com.project1.Helper.Utils;
+import project1.android.com.project1.helper.Constant;
+import project1.android.com.project1.helper.Utils;
 import project1.android.com.project1.adapters.MoviesCursorAdapter;
 import project1.android.com.project1.data.Data;
 import project1.android.com.project1.data.ErrorInfo;
@@ -30,7 +29,7 @@ import project1.android.com.project1.data.MovieData;
 import project1.android.com.project1.data.ResultData;
 import project1.android.com.project1.listeners.DataUpdateListener;
 
-public class MainActivity extends ActionBarActivity implements AdapterView.OnItemClickListener, DataUpdateListener, LoaderManager.LoaderCallbacks<Cursor>,MovieFragment.Callback {
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener, DataUpdateListener, LoaderManager.LoaderCallbacks<Cursor>,MovieFragment.Callback {
 
     //Reference variable to hold Grid view object
     private GridView mGridView;
@@ -63,10 +62,10 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
             results = savedInstanceState.getParcelableArrayList(Constant.RESULT_DATA_ARRAY);
         }
       //  selectedSortBy = Utils.getSharedPreferenceValue(this, getString(R.string.sort_by_key));
-        setUpActionBar();
+       // setUpActionBar();
 
        // initComponents();
-        if (findViewById(R.id.weather_detail_container) != null) {
+        if (findViewById(R.id.movies_detail_container) != null) {
             // The detail container view will be present only in the large-screen layouts
             // (res/layout-sw600dp). If this view is present, then the activity should be
             // in two-pane mode.
@@ -76,7 +75,7 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
             // fragment transaction.
             if (savedInstanceState == null) {
                 getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.weather_detail_container, new DetailFragment(), DETAILFRAGMENT_TAG)
+                        .replace(R.id.movies_detail_container, new DetailFragment(), DETAILFRAGMENT_TAG)
                         .commit();
             }
         } else {
@@ -92,14 +91,15 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
         setSupportActionBar(myToolbar);
     }
 
+    public void setActionBarTitle(String title){
+        getSupportActionBar().setTitle(title);
+    }
+
 
     @Override
     protected void onResume() {
         super.onResume();
-      /*  if (isRestarted) {
-            getSupportLoaderManager().restartLoader(MOVIE_LOADER, null, this);
-            isRestarted = false;
-        }*/
+
 
     }
 
@@ -192,7 +192,7 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
     }
 
     private void openMovieDetail(String movieID) {
-        Intent intent = new Intent(this, MovieDetailActivity.class);
+        Intent intent = new Intent(this, DetailActivity.class);
         Bundle bundle = new Bundle();
         bundle.putString(Constant.movie_id_key, movieID);
         intent.putExtras(bundle);
@@ -268,20 +268,20 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
 
     @Override
     public void onItemSelected(Uri contentUri) {
-        Toast.makeText(this,"gjh",Toast.LENGTH_LONG).show();
+
         if (mTwoPane) {
             // In two-pane mode, show the detail view in this activity by
             // adding or replacing the detail fragment using a
             // fragment transaction.
-          /*  Bundle args = new Bundle();
+            Bundle args = new Bundle();
             args.putParcelable(DetailFragment.DETAIL_URI, contentUri);
 
             DetailFragment fragment = new DetailFragment();
             fragment.setArguments(args);
 
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.weather_detail_container, fragment, DETAILFRAGMENT_TAG)
-                    .commit();*/
+                    .replace(R.id.movies_detail_container, fragment, DETAILFRAGMENT_TAG)
+                    .commit();
         } else {
             Intent intent = new Intent(this, DetailActivity.class)
                     .setData(contentUri);

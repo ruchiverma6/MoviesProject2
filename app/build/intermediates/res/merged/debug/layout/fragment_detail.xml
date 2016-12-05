@@ -6,14 +6,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     >
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/my_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -32,7 +25,7 @@
 
                 android:gravity="center|left"
                 android:paddingLeft="@dimen/movie_poster_title_margin_left"
-                android:text="@string/hello_world"
+
                 android:visibility="visible" />
 
 
@@ -57,7 +50,7 @@
                     android:layout_alignTop="@id/movie_poster_detail_image_view"
                     android:layout_marginLeft="@dimen/movie_poster_detail_fields_margin_left"
                     android:layout_toRightOf="@id/movie_poster_detail_image_view"
-                    android:text="2015" />
+                    />
 
 
 
@@ -69,7 +62,7 @@
                     android:layout_alignLeft="@id/year_text_view"
                     android:layout_below="@id/year_text_view"
                     android:layout_marginTop="@dimen/movie_poster_detail_fields_margin_top"
-                    android:text="1/10" />
+                    />
 
                 <ToggleButton
                     android:id="@+id/fav_button"
@@ -92,7 +85,7 @@
                     android:layout_alignLeft="@id/movie_poster_detail_image_view"
                     android:layout_below="@id/movie_poster_detail_image_view"
                     android:layout_marginTop="@dimen/movie_poster_detail_fav_btn_margin_top"
-                    android:text="Every child comes into the world full of promise, and none more than Chappie: he is gifted, special a prodigy Chappie he is a robot." />
+                />
             </RelativeLayout>
 
 

@@ -37,10 +37,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="project1.android.com.project1.MovieDetailActivity"
-            android:label="@string/title_activity_movie_detail" >
-        </activity>
-        <activity
             android:name="project1.android.com.project1.SettingsActivity"
             android:label="@string/title_activity_settings"
             android:parentActivityName="project1.android.com.project1.MainActivity" >
@@ -54,38 +50,12 @@
             android:authorities="project1.android.com.project1" />
 
         <activity
-            android:name="project1.android.com.project1.YouTubePlayerActivity"
-            android:label="@string/title_activity_you_tube_player" >
-        </activity>
-
-        <service
-            android:name="project1.android.com.project1.sync.MovieSyncService"
-            android:enabled="true"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.content.SyncAdapter" />
-            </intent-filter>
-
-            <meta-data
-                android:name="android.content.SyncAdapter"
-                android:resource="@xml/syncadapter" />
-        </service>
-        <service
-            android:name="project1.android.com.project1.sync.MovieAuthenticatorService"
-            android:enabled="true"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.accounts.AccountAuthenticator" />
-            </intent-filter>
-
-            <meta-data
-                android:name="android.accounts.AccountAuthenticator"
-                android:resource="@xml/authenticator" />
-        </service>
-
-        <activity
             android:name="project1.android.com.project1.DetailActivity"
             android:label="@string/title_activity_detail"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="project1.android.com.project1.ContainerActivity"
+            android:label="@string/title_activity_trailer"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
     </application>
 

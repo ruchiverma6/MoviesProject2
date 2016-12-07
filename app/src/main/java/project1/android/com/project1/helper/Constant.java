@@ -15,6 +15,7 @@ public class Constant {
     public static final String RESULT_DATA_ARRAY = "resultdatalist";
     public static final String MOVIE_DETAIL_DATA ="moviedetaildata" ;
     public static final java.lang.String MOVIE_ID_KEY = "movieid";
+    public static final String DATA_TYPE = "datatype";
     //Reference variable to hold popular movies url
     public static String POPULAR_MOVIES_URL="http://api.themoviedb.org/3/movie/%s?api_key=%s";
 

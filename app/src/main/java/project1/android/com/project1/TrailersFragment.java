@@ -58,7 +58,7 @@ public class TrailersFragment extends Fragment implements LoaderManager.LoaderCa
         super.onActivityCreated(savedInstanceState);
 
         mActivity = getActivity();
-       // ((DetailActivity)mActivity).setActionBarTitle(getString(R.string.trailers));
+        ((ContainerActivity)mActivity).setActionBarTitle(getString(R.string.trailers));
         Bundle bundle = getArguments();
         movieID = bundle.getString(Constant.MOVIE_ID_KEY);
         initComponents();

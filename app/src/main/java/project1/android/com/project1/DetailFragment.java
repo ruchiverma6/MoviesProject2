@@ -2,6 +2,7 @@ package project1.android.com.project1;
 
 import android.app.Activity;
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
@@ -32,7 +33,7 @@ import project1.android.com.project1.adapters.MoviesCursorAdapter;
 import project1.android.com.project1.data.MovieContract;
 
 
-public class DetailFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor>,View.OnClickListener{
+public class DetailFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor>, View.OnClickListener {
     private Button mTrailersBtn;
     private Button mReviewButton;
     private TrailersFragment mTrailersFragment;
@@ -91,33 +92,18 @@ public class DetailFragment extends Fragment implements LoaderManager.LoaderCall
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mActivity = getActivity();
-       // ((MainActivity)mActivity).setActionBarTitle(getString(R.string.title_activity_movie_detail));
+        if (mActivity instanceof DetailActivity) {
+            ((DetailActivity) mActivity).setActionBarTitle(getString(R.string.title_activity_movie_detail));
+        }
         Bundle arguments = getArguments();
         if (arguments != null) {
             uri = arguments.getParcelable(DetailFragment.DETAIL_URI);
-            movieId=uri.getPathSegments().get(2);
+            movieId = uri.getPathSegments().get(1);
         }
-
-       // Bundle bundle = getIntent().getExtras();
-      //  movieId = bundle.getString(Constant.movie_id_key);
         initComponents();
         getLoaderManager().initLoader(0, null, this);
 
-        getChildFragmentManager().addOnBackStackChangedListener(new FragmentManager.OnBackStackChangedListener() {
-            public void onBackStackChanged() {
-                Fragment trailerFragment = getChildFragmentManager().findFragmentByTag(getString(R.string.trailers));
-                Fragment reviewFragment = getChildFragmentManager().findFragmentByTag(getString(R.string.reviews));
-                String title;
-                if (trailerFragment != null) {
-                 title=getString(R.string.trailers);
-                } else if (reviewFragment != null) {
-                    title=getString(R.string.reviews);
-                } else {
-                    title=getString(R.string.title_activity_movie_detail);
-                }
-              //  ((DetailActivity)mActivity).setActionBarTitle(title);
-            }
-        });
+
     }
 
     @Override
@@ -176,10 +162,9 @@ public class DetailFragment extends Fragment implements LoaderManager.LoaderCall
     }
 
 
-
     @Override
     public Loader<Cursor> onCreateLoader(int id, Bundle args) {
-        if(movieId==null){
+        if (movieId == null) {
             return null;
         }
         String selection = MovieContract.MovieEntry.COLUMN_MOVIE_ID + " =? ";
@@ -189,7 +174,7 @@ public class DetailFragment extends Fragment implements LoaderManager.LoaderCall
 
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
-        if(null!=data && data.moveToFirst()) {
+        if (null != data && data.moveToFirst()) {
             setDataOnUI(data);
         }
     }
@@ -203,11 +188,11 @@ public class DetailFragment extends Fragment implements LoaderManager.LoaderCall
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.trailers_btn: {
-                addFragment(mTrailersFragment, getString(R.string.trailers));
+                LaunchUiSectionScreen(getString(R.string.trailers));
                 break;
             }
             case R.id.review_btn: {
-                addFragment(mReviewsFragment, getString(R.string.reviews));
+                LaunchUiSectionScreen(getString(R.string.reviews));
                 break;
             }
             default:
@@ -216,22 +201,25 @@ public class DetailFragment extends Fragment implements LoaderManager.LoaderCall
 
         }
     }
-    private void addFragment(Fragment fragment, String tag) {
+
+    private void LaunchUiSectionScreen(String dataType) {
 
         Bundle bundle = new Bundle();
         bundle.putString(Constant.MOVIE_ID_KEY, movieId);
-
-        fragment.setArguments(bundle);
-        getChildFragmentManager().beginTransaction().add(R.id.frame_content, fragment, tag).addToBackStack(null).commit();
+        bundle.putString(Constant.DATA_TYPE, dataType);
+        Intent intent = new Intent(mActivity, ContainerActivity.class);
+        intent.putExtras(bundle);
+        startActivity(intent);
 
 
     }
+
     /***
      * Method to update data on UI.
      */
     private void setDataOnUI(Cursor cursor) {
         mMoviePosterTitleTextView.setVisibility(View.VISIBLE);
-        // mDetailLayout.setVisibility(View.VISIBLE);
+
         mErrorTextView.setVisibility(View.GONE);
 
         moviePosterImageUrl = String.format(Constant.MOVIE_POSTER_BASE_URL, Constant.MOVIE_POSTER_IMAGE_WIDTH).concat(cursor.getString(cursor.getColumnIndex(MovieContract.MovieEntry.COLUMN_MOVIE_POSTER_URL)));

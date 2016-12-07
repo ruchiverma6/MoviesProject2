@@ -1,8 +1,6 @@
 package project1.android.com.project1;
 
 import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
@@ -16,46 +14,27 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.TextView;
 
-import java.util.ArrayList;
-
-import project1.android.com.project1.helper.Constant;
-import project1.android.com.project1.helper.Utils;
 import project1.android.com.project1.adapters.MoviesCursorAdapter;
-import project1.android.com.project1.data.Data;
-import project1.android.com.project1.data.ErrorInfo;
 import project1.android.com.project1.data.MovieContract;
-import project1.android.com.project1.data.MovieData;
-import project1.android.com.project1.data.ResultData;
-import project1.android.com.project1.listeners.DataUpdateListener;
 
 /**
  * Created by v-ruchd on 11/30/2016.
  */
 
-public class MovieFragment extends Fragment implements AdapterView.OnItemClickListener, LoaderManager.LoaderCallbacks<Cursor>,DataUpdateListener {
+public class MovieFragment extends Fragment implements AdapterView.OnItemClickListener, LoaderManager.LoaderCallbacks<Cursor> {
     private Activity mActivity;
     private String selectedSortBy;
-
+    static final String MOVIE_URI = "URI";
 
     //Reference variable to hold Grid view object
     private GridView mGridView;
 
     //MoviesArrayAdapter to bind data to GridView.
     private MoviesCursorAdapter mMovieCursorAdapter;
-
-    //Reference variable to hold context object.
-    private Context context;
-    //Array to hold results;
-    private ArrayList<ResultData> results;
-
-    private ArrayList<ResultData> resultDataArrayList = new ArrayList<>();
-
-    //Reference variable to hold textview.
-    private TextView mErrorTextView;
     private static final int MOVIE_LOADER = 0;
-    private Cursor existingCursor;
+
+    private Uri uri;
 
     @Nullable
     @Override
@@ -67,39 +46,17 @@ public class MovieFragment extends Fragment implements AdapterView.OnItemClickLi
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mActivity = getActivity();
-
-        selectedSortBy = Utils.getSharedPreferenceValue(mActivity, getString(R.string.sort_by_key));
+        Bundle arguments = getArguments();
+        if (arguments != null) {
+            uri = arguments.getParcelable(MovieFragment.MOVIE_URI);
+        }
         initComponents();
         getLoaderManager().initLoader(MOVIE_LOADER, null, this);
     }
 
-    private Cursor getData() {
-        Uri urin = MovieContract.MovieEntry.buildMovieWithSortBy(Utils.getSharedPreferenceValue(mActivity, getString(R.string.sort_by_key)));
-
-        Cursor cursorn = mActivity.getContentResolver().query(urin, null, null, null, null);
-        return cursorn;
-    }
     @Override
     public void onResume() {
         super.onResume();
-        existingCursor = getData();
-        downloadData();
-    }
-
-    /***
-     * Method to download data based on selected sort type.
-     */
-    public void downloadData() {
-        if (null != existingCursor && existingCursor.getCount() > 0) {
-            updateDataOnUI();
-        } else {
-            selectedSortBy = Utils.getSharedPreferenceValue(mActivity, getString(R.string.sort_by_key));
-            if (selectedSortBy.equals(getString(R.string.favorite))) {
-                getLoaderManager().restartLoader(MOVIE_LOADER, null, this);
-            } else {
-                Utils.downloadData(mActivity, String.format(Constant.POPULAR_MOVIES_URL, selectedSortBy, Constant.MOVIE_DB_API_KEY), this, Constant.MOVIE_TYPE, selectedSortBy);
-            }
-        }
     }
 
 
@@ -107,7 +64,6 @@ public class MovieFragment extends Fragment implements AdapterView.OnItemClickLi
      * Method for initializing components.
      */
     private void initComponents() {
-        mErrorTextView = (TextView) mActivity.findViewById(R.id.error_text_view);
         mGridView = (GridView) mActivity.findViewById(R.id.grid_view);
         mMovieCursorAdapter = new MoviesCursorAdapter(mActivity, null, 0);
         mGridView.setAdapter(mMovieCursorAdapter);
@@ -117,20 +73,18 @@ public class MovieFragment extends Fragment implements AdapterView.OnItemClickLi
 
     @Override
     public Loader<Cursor> onCreateLoader(int id, Bundle args) {
-        Uri uri = MovieContract.MovieEntry.buildMovieWithSortBy(Utils.getSharedPreferenceValue(mActivity, getString(R.string.sort_by_key)));
-
-        return new CursorLoader(mActivity, uri, null, null, null, null);
+      return new CursorLoader(mActivity, uri, null, null, null, null);
     }
 
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor cursor) {
         mMovieCursorAdapter.swapCursor(cursor);
-        updateDataInCaseOfEmptyCursor(cursor);
+
     }
 
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
-
+        mMovieCursorAdapter.swapCursor(null);
     }
 
     @Override
@@ -138,23 +92,15 @@ public class MovieFragment extends Fragment implements AdapterView.OnItemClickLi
         Cursor cursor = (Cursor) mMovieCursorAdapter.getItem(position);
         if (cursor != null) {
             String movieID = cursor.getString(cursor.getColumnIndex(MovieContract.MovieEntry.COLUMN_MOVIE_ID));
-            Uri uri = MovieContract.MovieEntry.buildMovieWithSortByAndId(selectedSortBy, movieID);
+            Uri uri = MovieContract.MovieEntry.buildMovieWithMovieId(movieID);
             ((Callback) getActivity())
                     .onItemSelected(uri);
-         //   openMovieDetail(movieID);
 
 
         }
 
     }
 
-    private void openMovieDetail(String movieID) {
-        Intent intent = new Intent(mActivity, MovieDetailActivity.class);
-        Bundle bundle = new Bundle();
-        bundle.putString(Constant.movie_id_key, movieID);
-        intent.putExtras(bundle);
-        startActivity(intent);
-    }
 
     /**
      * A callback interface that all activities containing this fragment must
@@ -169,57 +115,8 @@ public class MovieFragment extends Fragment implements AdapterView.OnItemClickLi
     }
 
 
-    private void updateDataInCaseOfEmptyCursor(Cursor cursor) {
-        String emptyDataMsg = null;
-        if (null == cursor || cursor.getCount() == 0) {
-            if (selectedSortBy.equals(getString(R.string.most_popular))) {
-                emptyDataMsg = getString(R.string.data_no_retrival_message);
-            } else if (selectedSortBy.equals(getString(R.string.top_rated))) {
-                emptyDataMsg = getString(R.string.data_no_retrival_message);
-            } else if (selectedSortBy.equals(getString(R.string.favorite))) {
-                emptyDataMsg = getString(R.string.no_fav_movies);
-            }
-            mGridView.setVisibility(View.GONE);
-            mErrorTextView.setVisibility(View.VISIBLE);
-            mErrorTextView.setText(emptyDataMsg);
-        } else {
-            mGridView.setVisibility(View.VISIBLE);
-            mErrorTextView.setVisibility(View.GONE);
-        }
-    }
-
-
-    @Override
-    public void onDataUpdate(Data movieData) {
-        if (isAdded()) {
-            if (null != movieData && movieData instanceof ErrorInfo) {
-                updateErrorMsgOnUI((ErrorInfo) movieData);
-            } else {
-
-                results = ((MovieData) movieData).getResults();
-mGridView.setSelection(0);
-                updateDataOnUI();
-            }
-        }
-    }
-
-
-    private void updateDataOnUI() {
-        mErrorTextView.setVisibility(View.GONE);
-        mGridView.setVisibility(View.VISIBLE);
-        if (null != getLoaderManager().getLoader(MOVIE_LOADER)) {
-            getLoaderManager().restartLoader(MOVIE_LOADER, null, this);
-        } else {
-            getLoaderManager().initLoader(MOVIE_LOADER, null, this);
-        }
-
-    }
-
-
-    private void updateErrorMsgOnUI(ErrorInfo movieData) {
-        mErrorTextView.setVisibility(View.VISIBLE);
-        mErrorTextView.setText(movieData.getErrorMsg());
-        mGridView.setVisibility(View.GONE);
-
-    }
 }
+
+
+
+

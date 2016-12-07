@@ -16,16 +16,16 @@
         "source": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.0\\res\\drawable\\notification_tile_bg.xml"
     },
     {
+        "merged": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\design_fab_background.xml",
+        "source": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\drawable\\design_fab_background.xml"
+    },
+    {
         "merged": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_borderless_material.xml",
         "source": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.0\\res\\drawable\\abc_btn_borderless_material.xml"
     },
     {
         "merged": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_voice_search_api_material.xml",
         "source": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.0\\res\\drawable\\abc_ic_voice_search_api_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\design_fab_background.xml",
-        "source": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\drawable\\design_fab_background.xml"
     },
     {
         "merged": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\studio.png",
@@ -172,11 +172,11 @@
         "source": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.0\\res\\drawable\\abc_cab_background_top_material.xml"
     },
     {
-        "merged": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_tick_mark_material.xml",
-        "source": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.0\\res\\drawable\\abc_seekbar_tick_mark_material.xml"
-    },
-    {
         "merged": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\design_snackbar_background.xml",
         "source": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\drawable\\design_snackbar_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_tick_mark_material.xml",
+        "source": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.0\\res\\drawable\\abc_seekbar_tick_mark_material.xml"
     }
 ]

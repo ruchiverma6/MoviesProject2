@@ -1,0 +1,38 @@
+[
+    {
+        "outputFile": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\res\\merged\\debug\\values-sw720dp-v13\\values-sw720dp-v13.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 57,
+                    "endOffset": 108
+                },
+                "from": {
+                    "file": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\src\\main\\res\\values-sw720dp\\dimens.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 113,
+                    "endColumn": 49,
+                    "endOffset": 158
+                },
+                "from": {
+                    "file": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\src\\main\\res\\values-sw720dp\\integers.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 49,
+                        "endOffset": 100
+                    }
+                }
+            }
+        ]
+    }
+]

@@ -48,7 +48,7 @@ public class ReviewsFragment extends Fragment implements LoaderManager.LoaderCal
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mActivity = getActivity();
-        ((DetailActivity) mActivity).setActionBarTitle(getString(R.string.reviews));
+        ((ContainerActivity)mActivity).setActionBarTitle(getString(R.string.reviews));
         Bundle bundle = getArguments();
         if (null != bundle) {
             movieId = bundle.getString(Constant.MOVIE_ID_KEY);

@@ -59,6 +59,10 @@ public class MovieContract {
         public static Uri buildMovieWithSortByAndId(String sortBy,String movieID) {
             return CONTENT_URI.buildUpon().appendPath(sortBy).appendPath(movieID).build();
         }
+
+        public static Uri buildMovieWithMovieId(String movieID) {
+            return CONTENT_URI.buildUpon().appendPath(movieID).build();
+        }
     }
 
     public static final class SortByEntry implements BaseColumns {

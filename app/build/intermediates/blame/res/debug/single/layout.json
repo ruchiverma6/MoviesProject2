@@ -8,12 +8,12 @@
         "source": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\layout\\design_bottom_sheet_dialog.xml"
     },
     {
-        "merged": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
-        "source": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\src\\main\\res\\layout\\activity_main.xml"
-    },
-    {
         "merged": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
         "source": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.0\\res\\layout\\notification_template_part_time.xml"
+    },
+    {
+        "merged": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
+        "source": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
         "merged": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
@@ -38,6 +38,10 @@
     {
         "merged": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_header.xml",
         "source": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\layout\\design_navigation_item_header.xml"
+    },
+    {
+        "merged": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\content_trailer.xml",
+        "source": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\src\\main\\res\\layout\\content_trailer.xml"
     },
     {
         "merged": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\settings_layout.xml",
@@ -116,12 +120,12 @@
         "source": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.0\\res\\layout\\notification_action_tombstone.xml"
     },
     {
-        "merged": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
-        "source": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.0\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
-    },
-    {
         "merged": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_separator.xml",
         "source": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\layout\\design_navigation_item_separator.xml"
+    },
+    {
+        "merged": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
+        "source": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.0\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
     },
     {
         "merged": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_menu.xml",
@@ -180,12 +184,12 @@
         "source": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\layout\\design_layout_snackbar.xml"
     },
     {
-        "merged": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\reviews_fragment_layout.xml",
-        "source": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\src\\main\\res\\layout\\reviews_fragment_layout.xml"
-    },
-    {
         "merged": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_detail.xml",
         "source": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\src\\main\\res\\layout\\activity_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\reviews_fragment_layout.xml",
+        "source": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\src\\main\\res\\layout\\reviews_fragment_layout.xml"
     },
     {
         "merged": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\trailers_fragment_layout.xml",
@@ -260,12 +264,16 @@
         "source": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.0\\res\\layout\\abc_activity_chooser_view_list_item.xml"
     },
     {
+        "merged": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_toolbar.xml",
+        "source": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.0\\res\\layout\\abc_screen_toolbar.xml"
+    },
+    {
         "merged": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\movie_trailer_item.xml",
         "source": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\src\\main\\res\\layout\\movie_trailer_item.xml"
     },
     {
-        "merged": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_toolbar.xml",
-        "source": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.0\\res\\layout\\abc_screen_toolbar.xml"
+        "merged": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_trailer.xml",
+        "source": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\src\\main\\res\\layout\\activity_trailer.xml"
     },
     {
         "merged": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_icon_group.xml",

@@ -55,7 +55,7 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name="project1.android.com.project1.ContainerActivity"
-            android:label="@string/title_activity_trailer"
+            android:label="@string/title_activity_container"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
     </application>
 

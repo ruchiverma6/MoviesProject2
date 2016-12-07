@@ -2851,10 +2851,10 @@ containing a value of this type.
         public static final int sort_by_key=0x7f070044;
         public static final int status_bar_notification_info_overflow=0x7f070014;
         public static final int sync_account_type=0x7f070045;
-        public static final int title_activity_detail=0x7f070046;
-        public static final int title_activity_movie_detail=0x7f070047;
-        public static final int title_activity_settings=0x7f070048;
-        public static final int title_activity_trailer=0x7f070049;
+        public static final int title_activity_container=0x7f070046;
+        public static final int title_activity_detail=0x7f070047;
+        public static final int title_activity_movie_detail=0x7f070048;
+        public static final int title_activity_settings=0x7f070049;
         public static final int title_activity_you_tube_player=0x7f07004a;
         public static final int top_rated=0x7f07004b;
         public static final int trailer_id=0x7f07004c;

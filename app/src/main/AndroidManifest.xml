@@ -52,7 +52,7 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".ContainerActivity"
-            android:label="@string/title_activity_trailer"
+            android:label="@string/title_activity_container"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
     </application>
 

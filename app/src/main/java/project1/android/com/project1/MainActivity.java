@@ -25,6 +25,7 @@ import project1.android.com.project1.listeners.DataUpdateListener;
 
 public class MainActivity extends AppCompatActivity implements DataUpdateListener, MovieFragment.Callback {
 
+    private static final String MOVIE_FRAGMENT_TAG = "MVTAG";
     //Array to hold results;
     private ArrayList<ResultData> results;
 
@@ -123,9 +124,15 @@ public class MainActivity extends AppCompatActivity implements DataUpdateListene
     }
 
     private void updateDataOnUI() {
-        if (null != existingCursor && existingCursor.moveToFirst()) {
+        Fragment moviFragment = getSupportFragmentManager().findFragmentByTag(MOVIE_FRAGMENT_TAG);
+        if (null != moviFragment && null != ((MovieFragment) moviFragment).getSelectedMovieId()) {
+            movieId = ((MovieFragment) moviFragment).getSelectedMovieId();
+        } else {
+            if (null != existingCursor && existingCursor.moveToFirst()) {
 
-            movieId = existingCursor.getString(existingCursor.getColumnIndex(MovieContract.MovieEntry.COLUMN_MOVIE_ID));
+                movieId = existingCursor.getString(existingCursor.getColumnIndex(MovieContract.MovieEntry.COLUMN_MOVIE_ID));
+
+            }
         }
         Uri movieUri = MovieContract.MovieEntry.buildMovieWithSortBy(Utils.getSharedPreferenceValue(this, getString(R.string.sort_by_key)));
 
@@ -136,8 +143,8 @@ public class MainActivity extends AppCompatActivity implements DataUpdateListene
 
         MovieFragment movieFragment = new MovieFragment();
         movieFragment.setArguments(movieargs);
-
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_movies, movieFragment).commit();
+        movieFragment.setSelectedMovieid(movieId);
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_movies, movieFragment, MOVIE_FRAGMENT_TAG).commit();
         if (mTwoPane) {
             Bundle args = new Bundle();
             args.putParcelable(DetailFragment.DETAIL_URI, uri);
@@ -167,7 +174,6 @@ public class MainActivity extends AppCompatActivity implements DataUpdateListene
         }
         return super.onOptionsItemSelected(item);
     }
-
 
 
     @Override

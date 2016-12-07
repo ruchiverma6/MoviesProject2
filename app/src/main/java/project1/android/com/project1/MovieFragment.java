@@ -23,6 +23,7 @@ import project1.android.com.project1.data.MovieContract;
  */
 
 public class MovieFragment extends Fragment implements AdapterView.OnItemClickListener, LoaderManager.LoaderCallbacks<Cursor> {
+    private static final String SELECTED_MOVIEID= "selectedmovieid";
     private Activity mActivity;
     private String selectedSortBy;
     static final String MOVIE_URI = "URI";
@@ -35,10 +36,19 @@ public class MovieFragment extends Fragment implements AdapterView.OnItemClickLi
     private static final int MOVIE_LOADER = 0;
 
     private Uri uri;
+    private String selectedMovieID;
+    private static final String SELECTED_SCROLL_KEY ="selectedscrollposition";
+    private int mScrollPosition=-1;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        if (savedInstanceState != null && savedInstanceState.containsKey(SELECTED_MOVIEID)) {
+            selectedMovieID = savedInstanceState.getString(SELECTED_MOVIEID);
+        }
+        if (savedInstanceState != null && savedInstanceState.containsKey(SELECTED_SCROLL_KEY)) {
+            mScrollPosition = savedInstanceState.getInt(SELECTED_SCROLL_KEY);
+        }
         return inflater.inflate(R.layout.movie_fragment_layout, null);
     }
 
@@ -59,6 +69,24 @@ public class MovieFragment extends Fragment implements AdapterView.OnItemClickLi
         super.onResume();
     }
 
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        if (null!=selectedMovieID) {
+            outState.putString(SELECTED_MOVIEID, selectedMovieID);
+        }
+        if(mScrollPosition!=GridView.INVALID_POSITION){
+            outState.putInt(SELECTED_SCROLL_KEY,mScrollPosition);
+        }
+    }
+
+    public String getSelectedMovieId(){
+        return selectedMovieID;
+    }
+
+    public void setSelectedMovieid(String selectedMovieID){
+        this.selectedMovieID=selectedMovieID;
+    }
 
     /**
      * Method for initializing components.
@@ -73,13 +101,22 @@ public class MovieFragment extends Fragment implements AdapterView.OnItemClickLi
 
     @Override
     public Loader<Cursor> onCreateLoader(int id, Bundle args) {
-      return new CursorLoader(mActivity, uri, null, null, null, null);
+        return new CursorLoader(mActivity, uri, null, null, null, null);
     }
 
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor cursor) {
         mMovieCursorAdapter.swapCursor(cursor);
+        if(mScrollPosition!=GridView.INVALID_POSITION){
 
+            mGridView.post( new Runnable() {
+                @Override
+                public void run() {
+                   // mGridView.smoothScrollToPosition(mScrollPosition);
+                    mGridView.setSelection(mScrollPosition);
+                }
+            });
+        }
     }
 
     @Override
@@ -95,9 +132,11 @@ public class MovieFragment extends Fragment implements AdapterView.OnItemClickLi
             Uri uri = MovieContract.MovieEntry.buildMovieWithMovieId(movieID);
             ((Callback) getActivity())
                     .onItemSelected(uri);
-
+            selectedMovieID = movieID;
 
         }
+        mScrollPosition=position;
+
 
     }
 

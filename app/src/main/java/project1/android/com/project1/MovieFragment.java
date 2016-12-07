@@ -112,8 +112,8 @@ public class MovieFragment extends Fragment implements AdapterView.OnItemClickLi
             mGridView.post( new Runnable() {
                 @Override
                 public void run() {
-                   // mGridView.smoothScrollToPosition(mScrollPosition);
-                    mGridView.setSelection(mScrollPosition);
+                   mGridView.smoothScrollToPosition(mScrollPosition);
+
                 }
             });
         }

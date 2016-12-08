@@ -140,10 +140,6 @@
         "source": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\src\\main\\res\\layout\\movie_fragment_layout.xml"
     },
     {
-        "merged": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main_new.xml",
-        "source": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\src\\main\\res\\layout\\activity_main_new.xml"
-    },
-    {
         "merged": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",
         "source": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.0\\res\\layout\\select_dialog_multichoice_material.xml"
     },
@@ -202,10 +198,6 @@
     {
         "merged": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
         "source": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.0\\res\\layout\\abc_list_menu_item_icon.xml"
-    },
-    {
-        "merged": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_you_tube_player.xml",
-        "source": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\src\\main\\res\\layout\\activity_you_tube_player.xml"
     },
     {
         "merged": "C:\\Users\\v-ruchd\\Desktop\\la3011\\Project1_3011\\Project1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_icon.xml",

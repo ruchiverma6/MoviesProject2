@@ -25,8 +25,6 @@ public class MoviesCursorAdapter extends CursorAdapter{
 
     private LayoutInflater mLayoutInflater;
 
-    //ImageView to show movie poster.
-    private ImageView mMoviePosterImageView;
 
     private ResultData result;
     private ArrayList<ResultData> results;
@@ -49,18 +47,23 @@ public class MoviesCursorAdapter extends CursorAdapter{
     @Override
     public View newView(Context context, Cursor cursor, ViewGroup parent) {
         View view = LayoutInflater.from(context).inflate(R.layout.grid_view_item, parent, false);
-
+        ViewHolder viewHolder=new ViewHolder(view);
+        view.setTag(viewHolder);
         return view;
     }
 
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
-        mMoviePosterImageView=(ImageView)view.findViewById(R.id.movie_poster_image_view);
+        ViewHolder viewHolder=(ViewHolder) view.getTag();
         moviePosterImageUrl =String.format(Constant.MOVIE_POSTER_BASE_URL,Constant.MOVIE_POSTER_IMAGE_WIDTH).concat(cursor.getString(cursor.getColumnIndex(MovieContract.MovieEntry.COLUMN_MOVIE_POSTER_URL)));
-
-
-        Picasso.with(context).load(moviePosterImageUrl).into(mMoviePosterImageView);
+        Picasso.with(context).load(moviePosterImageUrl).into(viewHolder.mMoviePosterImageView);
     }
 
+    static class ViewHolder{
+        public final ImageView mMoviePosterImageView;
+        public ViewHolder(View view){
+            mMoviePosterImageView=(ImageView)view.findViewById(R.id.movie_poster_image_view);
+        }
+    }
 
 }

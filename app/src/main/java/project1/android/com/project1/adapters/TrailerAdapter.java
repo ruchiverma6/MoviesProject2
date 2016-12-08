@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CursorAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import project1.android.com.project1.R;
@@ -23,28 +22,32 @@ public class TrailerAdapter extends CursorAdapter {
     private LayoutInflater mLayoutInflater;
 
 
-    private ImageView mPlayIcon;
-    private TextView mTrailerNumTextViewTitle;
-
     public TrailerAdapter(Context context, Cursor c, int flags) {
         super(context, c, flags);
     }
 
 
-
-
     @Override
     public View newView(Context context, Cursor cursor, ViewGroup parent) {
         View view = LayoutInflater.from(context).inflate(R.layout.trailer_list_item, parent, false);
-
+        ViewHolder viewHolder = new ViewHolder(view);
+        view.setTag(viewHolder);
         return view;
     }
 
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
-        mPlayIcon = (ImageView) view.findViewById(R.id.play_imageview_icon);
-        mTrailerNumTextViewTitle = (TextView) view.findViewById(R.id.trailer_num_text_view);
-        String trailerNum=cursor.getString(cursor.getColumnIndex(MovieContract.TrailerEntry.COLUMN_TRAILER_NAME));
-        mTrailerNumTextViewTitle.setText(trailerNum);
+        ViewHolder viewHolder = (ViewHolder) view.getTag();
+        String trailerNum = cursor.getString(cursor.getColumnIndex(MovieContract.TrailerEntry.COLUMN_TRAILER_NAME));
+        viewHolder.mTrailerNumTextViewTitle.setText(trailerNum);
+    }
+
+    static class ViewHolder {
+        public TextView mTrailerNumTextViewTitle;
+
+        public ViewHolder(View view) {
+            mTrailerNumTextViewTitle = (TextView) view.findViewById(R.id.trailer_num_text_view);
+        }
+
     }
 }

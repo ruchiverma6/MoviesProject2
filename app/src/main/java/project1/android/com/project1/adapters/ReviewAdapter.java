@@ -16,10 +16,7 @@ import project1.android.com.project1.data.MovieContract;
  */
 
 public class ReviewAdapter extends CursorAdapter {
-
-
     private LayoutInflater mLayoutInflater;
-    private TextView mReviewContent;
 
     public ReviewAdapter(Context context, Cursor c, int flags) {
         super(context, c, flags);
@@ -29,16 +26,25 @@ public class ReviewAdapter extends CursorAdapter {
     @Override
     public View newView(Context context, Cursor cursor, ViewGroup parent) {
         View view = LayoutInflater.from(context).inflate(R.layout.review_list_item, parent, false);
-
+        ViewHolder viewHolder = new ViewHolder(view);
+        view.setTag(viewHolder);
         return view;
     }
 
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
-        mReviewContent = (TextView) view.findViewById(R.id.review_text_view);
+        ViewHolder viewHolder = (ViewHolder) view.getTag();
         String content = cursor.getString(cursor.getColumnIndex(MovieContract.ReviewEntry.COLUMN_CONTENT));
-        mReviewContent.setText(content);
+        viewHolder.mReviewContent.setText(content);
     }
 
+    static class ViewHolder {
+        public TextView mReviewContent;
 
+        public ViewHolder(View view) {
+            mReviewContent = (TextView) view.findViewById(R.id.review_text_view);
+
+        }
+
+    }
 }

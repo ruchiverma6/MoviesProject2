@@ -23,22 +23,19 @@ import project1.android.com.project1.data.MovieContract;
  */
 
 public class MovieFragment extends Fragment implements AdapterView.OnItemClickListener, LoaderManager.LoaderCallbacks<Cursor> {
-    private static final String SELECTED_MOVIEID= "selectedmovieid";
+    private static final String SELECTED_MOVIEID = "selectedmovieid";
     private Activity mActivity;
     private String selectedSortBy;
     static final String MOVIE_URI = "URI";
-
     //Reference variable to hold Grid view object
     private GridView mGridView;
-
     //MoviesArrayAdapter to bind data to GridView.
     private MoviesCursorAdapter mMovieCursorAdapter;
     private static final int MOVIE_LOADER = 0;
-
     private Uri uri;
     private String selectedMovieID;
-    private static final String SELECTED_SCROLL_KEY ="selectedscrollposition";
-    private int mScrollPosition=-1;
+    private static final String SELECTED_SCROLL_KEY = "selectedscrollposition";
+    private int mScrollPosition = -1;
 
     @Nullable
     @Override
@@ -72,20 +69,20 @@ public class MovieFragment extends Fragment implements AdapterView.OnItemClickLi
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        if (null!=selectedMovieID) {
+        if (null != selectedMovieID) {
             outState.putString(SELECTED_MOVIEID, selectedMovieID);
         }
-        if(mScrollPosition!=GridView.INVALID_POSITION){
-            outState.putInt(SELECTED_SCROLL_KEY,mScrollPosition);
+        if (mScrollPosition != GridView.INVALID_POSITION) {
+            outState.putInt(SELECTED_SCROLL_KEY, mScrollPosition);
         }
     }
 
-    public String getSelectedMovieId(){
+    public String getSelectedMovieId() {
         return selectedMovieID;
     }
 
-    public void setSelectedMovieid(String selectedMovieID){
-        this.selectedMovieID=selectedMovieID;
+    public void setSelectedMovieid(String selectedMovieID) {
+        this.selectedMovieID = selectedMovieID;
     }
 
     /**
@@ -107,12 +104,11 @@ public class MovieFragment extends Fragment implements AdapterView.OnItemClickLi
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor cursor) {
         mMovieCursorAdapter.swapCursor(cursor);
-        if(mScrollPosition!=GridView.INVALID_POSITION){
-
-            mGridView.post( new Runnable() {
+        if (mScrollPosition != GridView.INVALID_POSITION) {
+            mGridView.post(new Runnable() {
                 @Override
                 public void run() {
-                   mGridView.smoothScrollToPosition(mScrollPosition);
+                    mGridView.smoothScrollToPosition(mScrollPosition);
 
                 }
             });
@@ -135,7 +131,7 @@ public class MovieFragment extends Fragment implements AdapterView.OnItemClickLi
             selectedMovieID = movieID;
 
         }
-        mScrollPosition=position;
+        mScrollPosition = position;
 
 
     }

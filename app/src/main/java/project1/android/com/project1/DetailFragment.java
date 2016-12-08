@@ -12,6 +12,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,13 +28,16 @@ import android.widget.ToggleButton;
 
 import com.squareup.picasso.Picasso;
 
-import project1.android.com.project1.helper.Constant;
-import project1.android.com.project1.helper.Utils;
-import project1.android.com.project1.adapters.MoviesCursorAdapter;
 import project1.android.com.project1.data.MovieContract;
+import project1.android.com.project1.helper.AsyncQueryHandlerListener;
+import project1.android.com.project1.helper.Constant;
+import project1.android.com.project1.helper.CustomAsyncQueryHandler;
+import project1.android.com.project1.helper.Utils;
 
 
-public class DetailFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor>, View.OnClickListener {
+public class DetailFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor>, View.OnClickListener, AsyncQueryHandlerListener {
+    private static final int FAVORITE_INSERT = 101;
+    private static final int FAVORITE_DELETE = 102;
     private Button mTrailersBtn;
     private Button mReviewButton;
     private TrailersFragment mTrailersFragment;
@@ -43,48 +47,32 @@ public class DetailFragment extends Fragment implements LoaderManager.LoaderCall
     //ListView object to hold movie trailers
     private ListView mMovieTrailerListView;
     static final String DETAIL_URI = "URI";
-
     //TextView object to hold movie poster title.
     private TextView mMoviePosterTitleTextView;
-
     //ImageView object to hold movie poster imageview.
     private ImageView mMoviePosterImageView;
-
     //TextView object to hold year.
     private TextView mYearTextView;
-
-
     //TextView object to hold num.
     private TextView mNumTextView;
-
     //Button object to hold mark as favorite button
     private ToggleButton mMarkAsFavBtn;
-
     //TextView object to hold movie description.
     private TextView mMovieDescriptionTextView;
-
-
     //Movie Id .
     private String movieId;
-
     //Movie poster image url string.
     private String moviePosterImageUrl;
-
-    // private MovieDetailData movieDetailData;
-
     private RelativeLayout mDetailLayout;
-
     private TextView mErrorTextView;
     private Uri uri;
     private Activity mActivity;
     private GridView mGridView;
-    //MoviesArrayAdapter to bind data to GridView.
-    private MoviesCursorAdapter mMovieCursorAdapter;
+    static final String TAG = DetailFragment.class.getSimpleName();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_detail, container, false);
     }
 
@@ -102,14 +90,11 @@ public class DetailFragment extends Fragment implements LoaderManager.LoaderCall
         }
         initComponents();
         getLoaderManager().initLoader(0, null, this);
-
-
     }
 
     @Override
     public void onResume() {
         super.onResume();
-
     }
 
     /***
@@ -123,11 +108,8 @@ public class DetailFragment extends Fragment implements LoaderManager.LoaderCall
         mMarkAsFavBtn = (ToggleButton) mActivity.findViewById(R.id.fav_button);
         mNumTextView = (TextView) mActivity.findViewById(R.id.num_text_view);
         mYearTextView = (TextView) mActivity.findViewById(R.id.year_text_view);
-
         mMoviePosterTitleTextView = (TextView) mActivity.findViewById(R.id.movie_poster_title);
-
         mFragmentSupportManager = getChildFragmentManager();
-
         mFrameLayout = (FrameLayout) mActivity.findViewById(R.id.frame_content);
         mTrailersFragment = new TrailersFragment();
         mReviewsFragment = new ReviewsFragment();
@@ -141,7 +123,6 @@ public class DetailFragment extends Fragment implements LoaderManager.LoaderCall
                 boolean isAddFavorite = false;
                 if (isChecked) {
                     isAddFavorite = true;
-
                 }
                 addFavoriteToDb(isAddFavorite);
             }
@@ -150,14 +131,16 @@ public class DetailFragment extends Fragment implements LoaderManager.LoaderCall
     }
 
     private void addFavoriteToDb(boolean IsAddToFavorite) {
+        CustomAsyncQueryHandler customAsyncQueryHandler = new CustomAsyncQueryHandler(mActivity.getContentResolver());
+        customAsyncQueryHandler.setAsyncQueryHandlerListener(this);
         if (IsAddToFavorite) {
             ContentValues contentValues = new ContentValues();
             contentValues.put(MovieContract.SortByEntry.COLUMN_MOVIE_KEY, movieId);
             contentValues.put(MovieContract.SortByEntry.COLUMN_SORT_TYPE, getString(R.string.favorite));
-            mActivity.getContentResolver().insert(MovieContract.SortByEntry.CONTENT_URI, contentValues);
+            customAsyncQueryHandler.startInsert(FAVORITE_INSERT, null, MovieContract.SortByEntry.CONTENT_URI, contentValues);
         } else {
             String[] selectionArgs = new String[]{movieId, getString(R.string.favorite)};
-            mActivity.getContentResolver().delete(MovieContract.SortByEntry.CONTENT_URI, MovieContract.SortByEntry.selection, selectionArgs);
+            customAsyncQueryHandler.startDelete(FAVORITE_DELETE, null, MovieContract.SortByEntry.CONTENT_URI, MovieContract.SortByEntry.selection, selectionArgs);
         }
     }
 
@@ -181,7 +164,6 @@ public class DetailFragment extends Fragment implements LoaderManager.LoaderCall
 
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
-
     }
 
     @Override
@@ -197,21 +179,16 @@ public class DetailFragment extends Fragment implements LoaderManager.LoaderCall
             }
             default:
                 break;
-
-
         }
     }
 
     private void LaunchUiSectionScreen(String dataType) {
-
         Bundle bundle = new Bundle();
         bundle.putString(Constant.MOVIE_ID_KEY, movieId);
         bundle.putString(Constant.DATA_TYPE, dataType);
         Intent intent = new Intent(mActivity, ContainerActivity.class);
         intent.putExtras(bundle);
         startActivity(intent);
-
-
     }
 
     /***
@@ -250,4 +227,31 @@ public class DetailFragment extends Fragment implements LoaderManager.LoaderCall
     }
 
 
+    @Override
+    public void onInsertComplete(int token, Object cookie, Uri uri) {
+        switch (token) {
+            case FAVORITE_INSERT:
+                Log.v(TAG, "favorite row inserted");
+                break;
+        }
+    }
+
+    @Override
+    public void onDeleteComplete(int token, Object cookie, int result) {
+        switch (token) {
+            case FAVORITE_DELETE:
+                Log.v(TAG, "favorite row deleted");
+                break;
+        }
+    }
+
+    @Override
+    public void onQueryComplete(int token, Object cookie, Cursor cursor) {
+
+    }
+
+    @Override
+    public void onUpdateComplete(int token, Object cookie, int result) {
+
+    }
 }

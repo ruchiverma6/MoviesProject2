@@ -19,26 +19,24 @@ import project1.android.com.project1.data.ErrorInfo;
 import project1.android.com.project1.data.MovieContract;
 import project1.android.com.project1.data.MovieData;
 import project1.android.com.project1.data.ResultData;
+import project1.android.com.project1.helper.AsyncQueryHandlerListener;
 import project1.android.com.project1.helper.Constant;
+import project1.android.com.project1.helper.CustomAsyncQueryHandler;
 import project1.android.com.project1.helper.Utils;
 import project1.android.com.project1.listeners.DataUpdateListener;
 
-public class MainActivity extends AppCompatActivity implements DataUpdateListener, MovieFragment.Callback {
+public class MainActivity extends AppCompatActivity implements DataUpdateListener, MovieFragment.Callback, AsyncQueryHandlerListener {
 
     private static final String MOVIE_FRAGMENT_TAG = "MVTAG";
+    private static final String DETAILFRAGMENT_TAG = "DFTAG";
+    private static final int MOVIES_DATA = 100;
     //Array to hold results;
     private ArrayList<ResultData> results;
-
-    private ArrayList<ResultData> resultDataArrayList = new ArrayList<>();
-
     //Reference variable to hold textview.
     private TextView mErrorTextView;
-
     private Cursor existingCursor;
     private String selectedSortBy;
-
     private boolean mTwoPane;
-    private static final String DETAILFRAGMENT_TAG = "DFTAG";
     private String movieId;
 
 
@@ -46,7 +44,6 @@ public class MainActivity extends AppCompatActivity implements DataUpdateListene
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         if (null != savedInstanceState) {
             results = savedInstanceState.getParcelableArrayList(Constant.RESULT_DATA_ARRAY);
         }
@@ -69,8 +66,8 @@ public class MainActivity extends AppCompatActivity implements DataUpdateListene
     @Override
     protected void onResume() {
         super.onResume();
-        existingCursor = getData();
-        downloadData();
+        getData();
+
     }
 
     @Override
@@ -86,10 +83,11 @@ public class MainActivity extends AppCompatActivity implements DataUpdateListene
         mErrorTextView = (TextView) findViewById(R.id.error_text_view);
     }
 
-    private Cursor getData() {
+    private void getData() {
+        CustomAsyncQueryHandler customAsyncQueryHandler = new CustomAsyncQueryHandler(getContentResolver());
+        customAsyncQueryHandler.setAsyncQueryHandlerListener(this);
         Uri urin = MovieContract.MovieEntry.buildMovieWithSortBy(Utils.getSharedPreferenceValue(this, getString(R.string.sort_by_key)));
-        Cursor cursorn = getContentResolver().query(urin, null, null, null, null);
-        return cursorn;
+        customAsyncQueryHandler.startQuery(MOVIES_DATA, null, urin, null, null, null, null);
     }
 
 
@@ -135,26 +133,26 @@ public class MainActivity extends AppCompatActivity implements DataUpdateListene
             }
         }
         Uri movieUri = MovieContract.MovieEntry.buildMovieWithSortBy(Utils.getSharedPreferenceValue(this, getString(R.string.sort_by_key)));
-
-        Uri uri = MovieContract.MovieEntry.buildMovieWithMovieId(movieId);
         mErrorTextView.setVisibility(View.GONE);
         Bundle movieargs = new Bundle();
         movieargs.putParcelable(MovieFragment.MOVIE_URI, movieUri);
-
         MovieFragment movieFragment = new MovieFragment();
         movieFragment.setArguments(movieargs);
         movieFragment.setSelectedMovieid(movieId);
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_movies, movieFragment, MOVIE_FRAGMENT_TAG).commit();
-        if (mTwoPane) {
-            Bundle args = new Bundle();
-            args.putParcelable(DetailFragment.DETAIL_URI, uri);
 
-            DetailFragment fragment = new DetailFragment();
-            fragment.setArguments(args);
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.movies_detail_container, fragment, DETAILFRAGMENT_TAG)
-                    .commit();
+        addFragment(R.id.fragment_movies, movieFragment, MOVIE_FRAGMENT_TAG);
+        if (mTwoPane) {
+            Uri detailUri = MovieContract.MovieEntry.buildMovieWithMovieId(movieId);
+            Bundle args = new Bundle();
+            args.putParcelable(DetailFragment.DETAIL_URI, detailUri);
+            DetailFragment detailFragment = new DetailFragment();
+            detailFragment.setArguments(args);
+            addFragment(R.id.movies_detail_container, detailFragment, DETAILFRAGMENT_TAG);
         }
+    }
+
+    private void addFragment(int containerId, Fragment fragment, String tag) {
+        getSupportFragmentManager().beginTransaction().replace(containerId, fragment, tag).commit();
     }
 
     @Override
@@ -218,9 +216,6 @@ public class MainActivity extends AppCompatActivity implements DataUpdateListene
     @Override
     public void onItemSelected(Uri contentUri) {
         if (mTwoPane) {
-            // In two-pane mode, show the detail view in this activity by
-            // adding or replacing the detail fragment using a
-            // fragment transaction.
             Bundle args = new Bundle();
             args.putParcelable(DetailFragment.DETAIL_URI, contentUri);
 
@@ -235,5 +230,31 @@ public class MainActivity extends AppCompatActivity implements DataUpdateListene
                     .setData(contentUri);
             startActivity(intent);
         }
+    }
+
+    @Override
+    public void onInsertComplete(int token, Object cookie, Uri uri) {
+
+    }
+
+    @Override
+    public void onDeleteComplete(int token, Object cookie, int result) {
+
+    }
+
+    @Override
+    public void onQueryComplete(int token, Object cookie, Cursor cursor) {
+        switch (token) {
+            case MOVIES_DATA:
+                existingCursor = cursor;
+                downloadData();
+                break;
+        }
+
+    }
+
+    @Override
+    public void onUpdateComplete(int token, Object cookie, int result) {
+
     }
 }

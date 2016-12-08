@@ -22,9 +22,6 @@ public class DetailActivity extends AppCompatActivity {
 
         setUpActionBar();
         if (savedInstanceState == null) {
-            // Create the detail fragment and add it to the activity
-            // using a fragment transaction.
-
             Bundle arguments = new Bundle();
             arguments.putParcelable(DetailFragment.DETAIL_URI, getIntent().getData());
 
@@ -37,7 +34,7 @@ public class DetailActivity extends AppCompatActivity {
         }
     }
 
-    public void setActionBarTitle(String title){
+    public void setActionBarTitle(String title) {
 
         getSupportActionBar().setTitle(title);
     }
@@ -70,20 +67,20 @@ public class DetailActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-         getMenuInflater().inflate(R.menu.menu_movie_detail, menu);
+        getMenuInflater().inflate(R.menu.menu_movie_detail, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id=item.getItemId();
-         if (id == android.R.id.home) {
+        int id = item.getItemId();
+        if (id == android.R.id.home) {
             onBackPressed();
             return true;
-        }else if (id == R.id.action_settings) {
-             Utils.launchSettingActivity(this);
-             return true;
-         }
+        } else if (id == R.id.action_settings) {
+            Utils.launchSettingActivity(this);
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 

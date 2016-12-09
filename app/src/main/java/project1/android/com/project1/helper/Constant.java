@@ -24,7 +24,7 @@ public class Constant {
     public static String TOP_RATED_URL="http://api.themoviedb.org/3/movie/top_rated?api_key=%s";
 
     //Reference variable to hold Movie DB Api key.
-    public static String MOVIE_DB_API_KEY="";  //Need to add Movie Db API key for working of this project.
+    public static String MOVIE_DB_API_KEY="f6ffadde87fb81871dfed27ac7dd61af";  //Need to add Movie Db API key for working of this project.
 
     //Movie poster base url;
     public static String MOVIE_POSTER_BASE_URL="http://image.tmdb.org/t/p/%s/";
@@ -44,7 +44,7 @@ public class Constant {
 
     public static String REVIEW_URL="https://api.themoviedb.org/3/movie/%s/reviews?api_key=%s&language=en-US";
 
-   
+    //https://api.themoviedb.org/3/movie/{movie_id}/videos?api_key=<<api_key>>&language=en-US
     public static int NO_INTERNET_CONNECTION=123;
  public static final String DEVELOPER_KEY="AIzaSyDOltNO56-dB7bOWqqlEt1NrSRF2s8q-CI\t";
 
